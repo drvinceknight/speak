@@ -19,7 +19,7 @@ def get_title(directory_path):
     title = directory_path.stem[len('yyyy-mm-dd'):]
     return title.replace("-", " ")
 
-def get_talk_file(directory_path, root="index",
+def get_talk_file(directory_path, root="main",
                   valid=[".pdf", ".html", ".link"]):
     """
     Returns the correct file exension
@@ -46,8 +46,6 @@ if __name__ == "__main__":
 
     header = pathlib.Path("./header.html")
     out += header.read_text()
-
-
 
     out +=  """
 <body>
