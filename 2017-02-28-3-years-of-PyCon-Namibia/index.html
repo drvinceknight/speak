@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Three years of PyCon Namibia</title>
+
+		<meta name="description" content="A talk given at PyDiff.">
+		<meta name="author" content="Vince Knight">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="../reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/css/theme/solarized.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+                <section data-markdown>
+                    ### 3 Years of PyCon Namibia
+
+                    #### [@drvinceknight](https://twitter.com/drvinceknight)
+                    #### [@PyConNa](https://twitter.com/PyConNa)
+                    #### [@PhoenixCUni](https://twitter.com/PhoenixCUni)
+                </section>
+
+
+                    <!-- Optional slide to change theme in case does not work well on given beamer -->
+                    <section id="themes">
+                        <h2>Themes</h2>
+                        <p>
+                            reveal.js comes with a few themes built in: <br>
+                            <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/black.css'); return false;">Black (default)</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/white.css'); return false;">White</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/league.css'); return false;">League</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/sky.css'); return false;">Sky</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/beige.css'); return false;">Beige</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/simple.css'); return false;">Simple</a> <br>
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/serif.css'); return false;">Serif</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/night.css'); return false;">Night</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/moon.css'); return false;">Moon</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/solarized.css'); return false;">Solarized</a>
+                        </p>
+                    </section>
+				</section>
+
+                <section>
+                    <img height=600 src="./static/map_of_namibia.jpg">
+                </section>
+
+                <section data-markdown>
+                    - Area: 825,615 square km
+                    - Water (%): negligible
+                    - Population: 2,113,077
+                    - Languages: 20
+                </section>
+
+                <section>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/NpKdOEv6Vyo" frameborder="0" allowfullscreen></iframe>
+                </section>
+
+                <section>
+                    <h1>Poverty</h1>
+                </section>
+
+                <section>
+					<img height=600 src="./static/unam_campuses.png">
+                </section>
+
+                <section>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/FbiqUJ3Ksz0" frameborder="0" allowfullscreen></iframe>
+                </section>
+
+                <section>
+					<img height=600 src="./static/judith.jpg">
+                </section>
+
+                <section>
+					<img height=600 src="./static/daniele.jpg">
+                </section>
+
+				<section>
+					<h2>Judith + Daniele</h2>
+				</section>
+
+				<section>
+					<img height=600 src="./static/2015.jpg">
+				</section>
+
+				<section>
+					<h4>Monday</h4>
+					<font size=5>
+					<ul>
+						<li>Daniele Procida: Introduction</li>
+						<li>Daniele Procida: Python & what to do with it</li>
+						<li>Workshop: Software installation party</li>
+						<li>Workshop: Introduction to Python for beginners with Daniele Procida</li>
+						<li>Workshop: Introduction to Git and GitHub with Jason Rudolph</li>
+						<li>Lightning talks</li>
+					</ul>
+					</font>
+				</section>
+
+				<section>
+					<h4>Tuesday</h4>
+					<font size=5>
+					<ul>
+						<li>Vincent Knight: Walking on pavements</li>
+						<li>Tuyoleni Hamata: The Art of Shuhari in Mastering Software Development</li>
+						<li>Tom Daley: Low bandwidth web design</li>
+						<li>Jason Young: Queue simulation in Python</li>
+						<li>Lightning talks</li>
+						<li>Geraint Palmer: Q-learning algorithms in Python</li>
+						<li>Alan McNeil Jackson: How to be useful: participation, programming and you</li>
+						<li>Loek van Gent: Introduction to automated testing</li>
+						<li>Lightning talks</li>
+					</ul>
+					</font>
+				</section>
+
+				<section>
+					<h4>Wednesday</h4>
+					<font size=5>
+					<ul>
+						<li>Web development in Python and Django with Tom Daley</li>
+						<li>Simulating queues with Jason Young</li>
+						<li>Unsupervised machine learning with Geraint Palmer</li>
+						<li>Distributed Messaging with Barry Scheepers</li>
+						<li>Introduction to automated testing with Loek van Gent</li>
+						<li>GitHub Office Hours with Jason Rudolph</li>
+						<li>Introduction to Game Theory with Vincent Knight</li>
+					</ul>
+					</font>
+				</section>
+
+				<section>
+					<h4>Thursday</h4>
+					<font size=5>
+					<ul>
+						<li>Let’s build an application!</li>
+						<li>Where do we go next?</li>
+						<li>Presentations</li>
+						<li>Closing addresses</li>
+					</ul>
+					</font>
+				</section>
+
+				<section>
+					<img height=600 src="./static/airplane_magazine.jpg">
+				</section>
+
+				<section>
+					<img height=600 src="./static/the_office.jpg">
+				</section>
+
+				<section>
+					<font size=15 color="red">
+						<p>Not an Axelrod slide</p>
+					</font>
+				</section>
+
+				<section>
+					<img width=600 src="./static/github_workshop.jpg">
+				</section>
+
+				<section>
+					<img width=600 src="./static/geraint_talk.jpg">
+				</section>
+
+				<section>
+					<p><a href="https://twitter.com/jessicaupani">@jessicaupani</a></p>
+					<img width=600 src="./static/jessica.jpg">
+				</section>
+
+				<section>
+					<p><a href="https://twitter.com/shingapi">@shingapi</a></p>
+					<img width=600 src="./static/gabriel.jpg">
+				</section>
+
+
+				<section>
+					<img height=600 src="./static/2016.jpg">
+				</section>
+
+				<section>
+					<a href="https://djangogirls.org/windhoek1/">djangogirls.org/windhoek1/</a>
+					<img width=600 src="./static/djangogirls_2016.jpg">
+				</section>
+
+				<section>
+					<h4>Monday</h4>
+
+					<ul>
+						<li>Installation clinic</li>
+						<li>Git: the very basics</li>
+						<li>Python for absolute beginners</li>
+						<li>Lightning Talks!</li>
+						<li>Conference Dinner</li>
+					</ul>
+				</section>
+
+				<section>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Mcdy83fUY2w" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h4>Tuesday/Wednesday: Talks</h4>
+					<font size=5>
+					<ul>
+						<li>Loek van Gent: Keynote: So - this idea of yours... </li>
+						<li>Geraint Palmer: Simulating queues with Ciw </li>
+						<li>Ibrahim Diop: The African Way</li>
+						<li>Iwan Vosloo: What's the point of Object Orientation?</li>
+						<li>Maik Hoepfel: The life of a freelancer</li>
+						<li>Daniele Procida: Introducing django CMS</li>
+						<li>Katie Barr: Image recognition via template matching</li>
+						<li>Humphrey Butau: Vim as a Python IDE</li>
+						<li>Llewellyn van der Merwe: Building a business on open source software</li>
+						<li>Anna Makarudze: About learning to program </li>
+						<li>David MacIver: How do I know if this code works?</li>
+						<li>Fernando Masanori Ashikaga: Python: the next Brazilian generation </li>
+						<li>Lightning Talks!</li>
+					</ul>
+					</font>
+				</section>
+
+				<section>
+					<img width=600 src="./static/2016_strikes.png">
+				</section>
+
+				<section>
+					<a href="http://www.ims.com.na/">www.ims.com.na</a>
+				</section>
+
+				<section>
+					<h4>Thursday: Talks</h4>
+					<font size=5>
+					<ul>
+						<li>Simon Cross: MomConnect</li>
+						<li>Vince Knight: Christmas gifts, evolution and Python</li>
+						<li>Helen Sherwood-Taylor: Planning a Python Event</li>
+						<li>Barry Scheepers: Web sockets</li>
+						<li>Katie Barr: Simulating quantum systems in less than 20 lines of pure Python</li>
+						<li>Lemoene Smit: Open Source LIMS in Namibian and Zimbabwean health care laboratories.</li>
+						<li>Maik Hoepfel: Working with APIs</li>
+						<li>Blake Griffith: Introducing Conda</li>
+						<li>Aisha Bello: My Journey through Python</li>
+						<li>Daniele Procida: Rider/Coder</li>
+						<li>Lightning Talks!</li>
+					</ul>
+					</font>
+				</section>
+
+				<section>
+					<h4>Friday: Workshops</h4>
+					<font size=5>
+					<ul>
+						<li>David MacIver: Automated testing and Hypothesis </li>
+						<li>All-day Django clinic </li>
+						<li>Fernando Masanori Ashikaga: Introduction to Python </li>
+						<li>All-day Python clinic </li>
+						<li>Simon Cross: Building a simple interactive fiction game with Asyncio and WebSockets. </li>
+						<li>Anna Makarudze: Developing Software using Python and Django to solve real life problems </li>
+						<li>Blake Griffith: Package and environment with conda </li>
+						<li>Maik Hoepfel: Your first pull request </li>
+						<li>Daniele Procida: Getting started with django CMS </li>
+					</ul>
+					</font>
+				</section>
+
+				<section>
+					<img width=600 src="./static/2016_lightning.jpg">
+				</section>
+
+				<section>
+					<img width=600 src="./static/sammy.jpg">
+				</section>
+
+				<section>
+					<p><a href="https://twitter.com/amakarudze">@amakarudze</a></p>
+					<img width=600 src="./static/anna.jpg">
+				</section>
+
+				<section>
+					<p><a href="https://twitter.com/hamub">@hamub</a></p>
+					<img width=600 src="./static/humphrey.jpg">
+				</section>
+
+				<section>
+					<a href="http://zw.pycon.org/">zw.pycon.org/</a>
+				</section>
+
+				<section>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/kforjpycOWo" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h3>2017</h3>
+					<img width=600 src="./static/2017.jpg">
+				</section>
+
+				<section>
+					<a href="https://djangogirls.org/windhoek2/">djangogirls.org/windhoek2/</a>
+					<img width=600 src="./static/djangogirls_2017.jpg">
+				</section>
+
+				<section>
+					<img width=600 src="./static/2017_opening.jpg">
+				</section>
+
+				<section>
+					<h4>Tuesday</h4>
+					<font size=5>
+					<ul>
+						<li>Lamech Amugongo - Introduction to data analytics; how to analyse data with Python</li>
+						<li>Code Doctor/install party/beginner tutorial</li>
+						<li>Meinolf Simbenda - Web2Py; Development of web applications with Python</li>
+						<li>Nikoleta Glynatsi and Vincent Knight - Game Theory with Python</li>
+						<li>Anna Makarudze - Testing your Django App</li>
+					</ul>
+					</font>
+				</section>
+
+				<section>
+					<h4>Wednesday</h4>
+					<font size=5>
+					<ul>
+						<li>Anna Makarudze & Humphrey Butau How we organised PyCon Zimbabwe</li>
+						<li>Annastasia (Anna) Shipepe Python the superlative language for beginners</li>
+						<li>Gabriel Tuhafeni Nhinda UX for developers</li>
+						<li>Maik Hoepfel Raspberry Pi and IOT</li>
+						<li>Nashilongo Gervasius and Annastasia Shipepe The Internet Society, Namibian Chapter</li>
+						<li>Ronald Maravanyika Working with Python for women and children in Zimbabwe</li>
+						<li>Geraint Palmer Producing Pretty Plots in Python</li>
+						<li>Nikoleta Glynatsi Using Python to access open research literature</li>
+						<li>Christian Christells A Python Developer's adventures in GIS</li>
+						<li>Daniele Procida Documentation will save your project!</li>
+						<li>Lightning talks</li>
+					</ul>
+					</font>
+				</section>
+
+				<section>
+					<h4>Thursday</h4>
+					<font size=5>
+					<ul>
+						<li>Helen Sherwood-Taylor</li>
+						<li>Iwan Vosloo A whirlwind tour of test setup</li>
+						<li>Nikoleta Glynatsi Writing tests for research software</li>
+						<li>Ronald Maravanyika How to capture downtown loss on a production (Python & Flask)</li>
+						<li>Humphrey Butau Django Cookie-Cutter</li>
+						<li>Eva Gonzales Contreras</li>
+						<li>Geraint Palmer CIW</li>
+						<li>Vincent Knight Markov Chains in Python</li>
+						<li>Loek van Gent Continuous Integration</li>
+						<li>Nashilongo Gervasius Namibia as a Knowledge Society by 2030: The Future Scenario in ICT for Sustainable Development</li>
+						<li>Lightning talks</li>
+					</ul>
+					</font>
+				</section>
+
+				<section>
+					<img width=600 src="./static/nikoleta.jpg">
+				</section>
+
+				<section>
+					<img width=600 src="./static/ron.jpg">
+				</section>
+
+				<section>
+					<img width=600 src="./static/student_speaking.jpg">
+				</section>
+
+				<section>
+					<img width=600 src="./static/pynam_scholars.jpg">
+				</section>
+
+				<section>
+					<img width=600 src="./static/sponsors.jpg">
+				</section>
+
+				<section>
+					<img width=600 src="./static/expectations.jpg">
+				</section>
+
+				<section>
+					<img width=600 src="./static/2017_close.jpg">
+				</section>
+
+                <section data-markdown>
+                - [@JudithHall99](https://twitter.com/JudithHall99)
+                - [@PhoenixCuni](https://twitter.com/PhoenixCUni)
+				</section>
+
+				<section>
+                    <h2>Thoughts</h2>
+				</section>
+
+                <section data-markdown>
+                - [@jessicaupani](https://twitter.com/jessicaupani)
+                - [@shingapi](https://twitter.com/shingapi)
+                - [@RMaravanyika](https://twitter.com/RMaravanyika)
+                - [@amakarudze](https://twitter.com/amakarudze)
+                - [@hamub](https://twitter.com/hamub)
+                - [@Zimbopy](https://twitter.com/Zimbopy)
+                - [@Pynamscholars](https://twitter.com/Pynamscholars)
+                - [@PyConNa](https://twitter.com/PyConNa)
+                - [@Pycon_zim](https://twitter.com/Pycon_zim)
+                </section>
+
+				<section>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/-6GBYx8Bffw" frameborder="0" allowfullscreen></iframe>
+				</section>
+		</div>
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../reveal.js/plugin/notes/notes.js', async: true },
+                    { src: '../reveal.js/plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

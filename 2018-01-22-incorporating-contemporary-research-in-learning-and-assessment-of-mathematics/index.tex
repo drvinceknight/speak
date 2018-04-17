@@ -1,0 +1,201 @@
+\documentclass{beamer}
+
+\usecolortheme[light]{solarized}
+
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{hyperref}
+\usepackage{minted}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usetikzlibrary{calc, patterns}
+
+\begin{document}
+
+    \begin{frame}
+        \begin{center}
+            \Large
+
+            Incorporating Contemporary Research in learning and Assessment of
+            Mathematics.\\
+
+            \vspace{1cm}
+
+            \normalsize
+            Vince Knight\\
+            \texttt knightva@cardiff.ac.uk\\
+            \href{https://twitter.com/drvinceknight}{@drvinceknight}
+        \end{center}
+
+
+    \end{frame}
+
+    \begin{frame}
+        $$\cos(\alpha)^2 + \sin(\alpha)^2=1$$
+
+        \begin{center}
+            \begin{tikzpicture}
+                \draw [->] (-2, 0) -- (2, 0);
+                \draw [->] (0, -2) -- (0, 2);
+
+                \draw [thick, red!80] (0, 0) -- (.5, 1.42);
+                \node at (.25, .2) {$\alpha$};
+                \draw (.5, 0) -- (.5, 1.42);
+
+                \draw (0, 0) circle (1.5);
+            \end{tikzpicture}
+        \end{center}
+	\end{frame}
+
+
+    \begin{frame}
+        \begin{center}
+            \Large Hairy ball theorem.
+
+            \pause
+            \includegraphics[width=.8\textwidth]{static/haircut.jpg}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+        \begin{center}
+            \includegraphics[width=.5\textwidth]{static/nash.jpg}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+        \small
+        \begin{quote}
+            `In the STEM classroom should we ask or should we tell?''
+        \end{quote}
+
+        \begin{center}
+            \textbf{Active learning increases student performance in
+            science, engineering, and mathematics} Freeman et al. 2014 (PNAS)
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+		\begin{center}
+            \frame{\includegraphics[height=.8\textheight]{./static/flipped_learning.jpg}}
+		\end{center}
+	\end{frame}
+
+    \begin{frame}
+        \Huge
+        \begin{center}
+            Video
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+		\begin{center}
+			\includegraphics[width=.6\textwidth]{./static/time_for_this_again.png}
+		\end{center}
+	\end{frame}
+
+    \begin{frame}
+        \begin{center}
+			\begin{tikzpicture}
+				% Nodes
+				\node (activity) at (0,0) [fill=cyan!30, draw] {Activity};
+				\node (data) at ($(activity) + (3,0)$) [fill=purple!30, draw] {Data};
+				\node (discussion) at ($(data) + (2,1.5)$) [fill=green!30, draw] {Discussion};
+				\node (theory) at ($(data) + (2,-1.5)$) [fill=red!30, draw] {Theory};
+
+				% Creative arrows
+				\draw [thick, ->] (activity) -- (data);
+				\draw [thick, ->] (data) edge[out=90, in=180] (discussion);
+				\draw [thick, ->] (discussion) edge[out=-45, in=45] (theory);
+
+				% Reflective arrows
+				\draw [thick, ->, dashed] (theory) edge[out=180, in=-90] (data);
+				\draw [thick, ->, dashed] (theory) edge[out=180, in=-90] (activity);
+				\draw [thick, ->, dashed] (discussion) edge[out=180, in=90] (activity);
+				\draw [thick, ->, dashed] (theory) edge[out=135, in=-135] (discussion);
+
+				% Key
+				\draw [thick, ->] ($(activity) + (-3,.25)$) -- ($(activity) + (-2.5,.25)$);
+				\node at ($(activity) + (-4, .25)$) {Production:};
+				\draw [thick, ->, dashed] ($(activity) + (-3,-.25)$) -- ($(activity) +
+				(-2.5,-.25)$);
+				\node at ($(activity) + (-4, -.25)$) {Reflection:};
+
+			\end{tikzpicture}
+        \end{center}
+
+        \begin{center}
+            \textbf{Playing Games: A Case Study in Active Learning Applied to Game Theory} Knight. 2015 (MSOR Connections)
+        \end{center}
+	\end{frame}
+
+    \begin{frame}
+        \begin{center}
+            \includegraphics[width=.8\textwidth]{./static/white_board.jpg}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+        \begin{center}
+            \begin{tikzpicture}[scale=0.6]
+                \node (knight) at (0, 8) {(Knight et al. 2016)};
+                \node (press) at ($(knight) + (0, -2)$) {(Press and Dyson 2012)};
+                \node (basanta) at ($(press) + (0, -2)$) {(Basanta 2008)};
+                \node (knight2017) at ($(basanta) + (0, -2)$) {(Knight et al.  2017)};
+
+                \node at ($(knight) + (7, 3)$) {Chapters};
+
+                \fill [blue!20] ($(knight) + (6.5, 2)$) rectangle ($(knight) + (7.5, -8)$);
+                \draw ($(knight) + (6.5, -1)$) -- ($(knight) + (7.5, -1)$);
+                \draw ($(knight) + (6.5, -3)$) -- ($(knight) + (7.5, -3)$);
+                \draw ($(knight) + (6.5, -5.5)$) -- ($(knight) + (7.5, -5.5)$);
+
+                \draw [thick, ->] (knight) -- ($(knight) + (6.5, .5)$);
+                \draw [thick, ->] (press) -- ($(knight) + (6.5, -2)$);
+                \draw [thick, ->] (basanta) -- ($(knight) + (6.5, -4.25)$);
+                \draw [thick, ->] (knight2017) -- ($(knight) + (6.5, -6.75)$);
+            \end{tikzpicture}
+        \end{center}
+    \end{frame}
+
+	\begin{frame}
+		\begin{center}
+			\Large
+			\textbf{FAQ:} Students don't [do some activity] before class.
+		\end{center}
+	\end{frame}
+
+    \begin{frame}
+        \Huge
+        \begin{center}
+            Assessment
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+        Consider the accompanying 2008 paper entitled ``Studying the
+		emergence of invasiveness in tumours using game theory'' by Basanta
+		et al.
+             \begin{enumerate}
+                 \item Give a general summary of the paper.
+                     ~\hfill{[3]}
+                 \item There is a minor error in this paper in the game matrix, 
+                     describe and suggest the fix.~\hfill{[2]}
+                 \item How does the theorem in part 4 of this question relate to
+                     the findings of the paper?~\hfill{[2]}
+                 \item Suggest an alternative area of game theory that could
+                     also be used.~\hfill{[3]}
+             \end{enumerate}
+    \end{frame}
+
+    \begin{frame}
+        \begin{center}
+            \includegraphics[width=.5\textwidth]{./static/Rutherford_Stephen_staff_profile.jpg}
+
+            (Dr Stephen Rutherford. BIOSCI.)
+        \end{center}
+    \end{frame}
+
+\end{document}

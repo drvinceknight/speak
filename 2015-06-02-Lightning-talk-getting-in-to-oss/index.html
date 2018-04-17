@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>From ... to OSS</title>
+
+		<meta name="description" content="A lighting talk given at DjangoCon
+        Europe 2015">
+		<meta name="author" content="Vince Knight">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+                <section>
+                <h3>From ... to OSS</h3>
+                <p>
+                <small><a href='https://twitter.com/drvinceknight'>@drvinceknight</a></small><br>
+                <small><a href='http://vknight.org/'>vknight.org</a></small>
+                </p>
+                </section>
+
+
+                    <!-- Optional slide to change theme in case does not work well on given beamer -->
+                    <section id="themes">
+                        <h2>Themes</h2>
+                        <p>
+                            reveal.js comes with a few themes built in: <br>
+                            <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+                        </p>
+                    </section>
+				</section>
+
+                <section>
+                <h3>
+                    Mathematica
+                </h3>
+                </section>
+
+                <section>
+                <h3>
+                    Sage (<a href='http://www.sagemath.org/'>sagemath.org</a>)
+                </h3>
+                <pre><code data-trim contenteditable>
+sage: integrate(x^2, x, 0, 5)
+125/3
+sage: a = matrix([[1, -1], [-1, 1]])
+sage: g = NormalFormGame([a])
+sage: g.obtain_nash()
+[[(1/2, 1/2), (1/2, 1/2)]]
+                </code></pre>
+                </section>
+
+                <section>
+               <img src='static/axelrod-tweet.png'>
+                </section>
+
+                <section>
+                    <img src='static/contributors.png'>
+                </section>
+
+                <section>
+                    <h3>"Everything I know I learnt from Pull Requests"</h3>
+                </section>
+
+                <section>
+                    <ol>
+                        <li>Embrace ignorance</li>
+                        <li class='fragment'>Build something interesting</li>
+                        <li class='fragment'>Thank everyone (a lot) for teaching me so much</li>
+                    </ol>
+                </section>
+
+                <section>
+					<p>
+                    <a href='https://github.com/Axelrod-Python/'>github.com/Axelrod-Python</a><br>
+					</p>
+					<p>
+                    <a
+                        href='https://gitter.im/Axelrod-Python/Axelrod'>gitter.im/Axelrod-Python/Axelrod</a><br>
+					</p>
+                </section>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

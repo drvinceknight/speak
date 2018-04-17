@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\node[align=center] at (0, -1) {\includegraphics{./img/hospital}\\\textit{Hospital 1}};
+\node[align=center] at (6, 1) {\includegraphics{./img/hospital}\\\textit{Hospital 2}};
+
+\draw[-triangle 90] (-3, -1) -- (-1, -1);
+\draw[-triangle 90] (9, 1) -- (7, 1);
+\draw[-triangle 90] (0, -2) -- (0, -3);
+\draw[-triangle 90] (6, 2) -- (6, 3);
+\draw[-triangle 90] (-1.5, -1) -- (-1.5, 1) -- (5, 1);
+\draw[-triangle 90] (7.5, 1) -- (7.5, -1) -- (1, -1);
+
+\node[align=center] at (-2.25, 0.5) {\small{$\geq K_{1}$?}\\\small{\textit{Divert}}};
+\node[align=center] at (8.25, -0.5) {\small{$\geq K_{2}$?}\\\small{\textit{Divert}}};
+
+\end{tikzpicture}
+
+\end{document}

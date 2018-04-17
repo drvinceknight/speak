@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Mathematics of a 1980s Computer Tournament</title>
+
+		<meta name="description" content="A talk given at Pembrokshire College">
+		<meta name="author" content="Vince Knight">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+                <section>
+                <h3>The Mathematics of a 1980s Computer Tournament</h3>
+                <p>
+                <small><a href='https://plus.google.com/+VincentKnight'>+VincentKnight</a></small><br>
+                <small><a href='https://twitter.com/drvinceknight'>@drvinceknight</a></small><br>
+                <small><a href='http://vknight.org/'>vknight.org</a></small>
+                </p>
+                <p>
+                <a href='http://vknight.org/Talks/'>vknight.org/Talks/</a>
+                </p>
+                </section>
+
+
+                    <!-- Optional slide to change theme in case does not work well on given beamer -->
+                    <section id="themes">
+                        <h2>Themes</h2>
+                        <p>
+                            reveal.js comes with a few themes built in: <br>
+                            <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+                        </p>
+                    </section>
+				</section>
+
+                <section>
+                    <img height=600 src='static/nash.jpg'>
+                </section>
+
+                <section>
+                $$
+                \begin{pmatrix}
+                0 & -1 & 1 & 1 & -1 \\
+                1 & 0 & -1 & -1 & 1 \\
+                -1 & 1 & 0 & 1 & -1 \\
+                -1 & 1 & -1 & 0 & 1 \\
+                1 & -1 & 1 & -1 & 0
+                \end{pmatrix}
+                $$
+                </section>
+
+                <section>
+                    <iframe width="640" height="480" src="https://www.youtube.com/embed/iapcKVn7DdY?rel=0" frameborder="0" allowfullscreen></iframe>
+                </section>
+
+                <section>
+                    <img height=550 src='static/rpsls.png'>
+                </section>
+
+                <section>
+                    <h3>Tournament</h3>
+                    <img src='static/bracket.svg' width=750>
+                </section>
+
+                <section>
+                <p>Mathematics can help understand how behaviour emerges.<p>
+                </section>
+
+                <section>
+                <h3>Golden Balls</h3>
+
+                <p>TV show from Feb 2008 to Feb 2009 where a jackpot is to be shared between 2 contestants who secretly choose to "split" or "steal".</p>
+
+                <ol>
+                    <li>If both players "split", the jackpot is split equally between them.
+</li>
+                    <li>If 1 player "splits" and the other "steals", the stealer gets the whole jackpot and the splitter leaves with nothing.
+</li>
+                    <li>If both players "steal", they both leave with nothing.
+</li>
+                </ol>
+                </section>
+
+                <section>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/p3Uos2fzIJ0?rel=0" frameborder="0" allowfullscreen></iframe>
+                </section>
+
+                <section>
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>Cooperate</td>
+                            <td>Defect</td>
+                            <tr>
+                                <tr>
+                                    <td>Cooperate</td>
+                                    <td>(3,3)</td>
+                                    <td>(0,5)</td>
+                                    <tr>
+                                        <tr>
+                                            <td>Defect</td>
+                                            <td>(5,0)</td>
+                                            <td>(1,1)</td>
+                                            <tr>
+                    </tbody>
+                </table>
+                </section>
+
+                <section>
+                <h3>Axelrod's computer tournament</h3>
+
+                    <img src='./static/tournament.svg' width=750>
+                </section>
+
+                <section>
+                    <h2>3 teams</h2>
+                </section>
+
+                <section>
+                <h3>Cooperator</h3>
+                <p>Always cooperate.</p>
+                </section>
+
+                <section>
+                <h3>Defector</h3>
+                <p>Always defect.</p>
+                </section>
+
+                <section>
+                <h3>Alternator</h3>
+                <p>Start by cooperating and then switch.</p>
+                </section>
+
+                <section>
+                <h3>Random</h3>
+                <p>Play randomly.</p>
+                </section>
+
+                <section>
+                <h3>Tit For Tat</h3>
+                <p>Start by cooperating and then do whatever your opponent does in the previous round.</p>
+                </section>
+                <section>
+                <font size="5">
+                <p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <tr>
+                                <tr>
+                                    <td>Alternator</td>
+                                    <td>C</td>
+                                    <td>D</td>
+                                    <td>C</td>
+                                    <td>D</td>
+                                    <td>C</td>
+                                    <td>D</td>
+                                    <td>C</td>
+                                    <td>D</td>
+                                    <tr>
+                                <tr class='fragment'>
+                                    <td>Tit For Tat</td>
+                                    <td class='fragment'>C</td>
+                                    <td class='fragment'>C</td>
+                                    <td class='fragment'>D</td>
+                                    <td class='fragment'>C</td>
+                                    <td class='fragment'>D</td>
+                                    <td class='fragment'>C</td>
+                                    <td class='fragment'>D</td>
+                                    <td class='fragment'>C</td>
+                                    <tr>
+                    </tbody>
+                </table>
+                </p>
+
+                <hr class='fragment'>
+
+                <p>
+                <table class='fragment'>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>C</td>
+                            <td>D</td>
+                            <tr>
+                                <tr>
+                                    <td>C</td>
+                                    <td>(3,3)</td>
+                                    <td>(0,5)</td>
+                                    <tr>
+                                        <tr>
+                                            <td>D</td>
+                                            <td>(5,0)</td>
+                                            <td>(1,1)</td>
+                                            <tr>
+                    </tbody>
+                </table>
+                </p>
+
+                <hr class='fragment'>
+
+                <p>
+                <table class='fragment'>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <tr>
+                                <tr>
+                                    <td>Alternator</td>
+                                    <td>3</td>
+                                    <td>5</td>
+                                    <td>0</td>
+                                    <td>5</td>
+                                    <td>0</td>
+                                    <td>5</td>
+                                    <td>0</td>
+                                    <td>5</td>
+                                    <tr>
+                                <tr>
+                                    <td>Tit For Tat</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td>5</td>
+                                    <td>0</td>
+                                    <td>5</td>
+                                    <td>0</td>
+                                    <td>5</td>
+                                    <td>0</td>
+                                    <tr>
+                    </tbody>
+                </table>
+                </p>
+                </font>
+                </section>
+
+                <section>
+                <font size="5">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>Alternator</td>
+                            <td>Cooperator</td>
+                            <td>Defector</td>
+                            <td>Random</td>
+                            <td>Tit For Tat</td>
+                            <tr>
+                                <tr>
+                                    <td>Alternator</td>
+                                    <td>2.0</td>
+                                    <td>4.0</td>
+                                    <td>0.5</td>
+                                    <td>2.3</td>
+                                    <td>2.5</td>
+                                    <tr>
+                                <tr>
+                                    <td>Cooperator</td>
+                                    <td>1.5</td>
+                                    <td>3.0</td>
+                                    <td>0.0</td>
+                                    <td>1.5</td>
+                                    <td>3.0</td>
+                                    <tr>
+                                <tr>
+                                    <td>Defector</td>
+                                    <td>3.0</td>
+                                    <td>5.0</td>
+                                    <td>1.0</td>
+                                    <td>3.0</td>
+                                    <td>1.0</td>
+                                    <tr>
+                                <tr>
+                                    <td>Random</td>
+                                    <td>2.2</td>
+                                    <td>4.0</td>
+                                    <td>0.5</td>
+                                    <td>2.3</td>
+                                    <td>2.7</td>
+                                    <tr>
+                                <tr>
+                                    <td>Tit For Tat</td>
+                                    <td>2.5</td>
+                                    <td>3.0</td>
+                                    <td>1.0</td>
+                                    <td>2.3</td>
+                                    <td>3.0</td>
+                                    <tr>
+                    </tbody>
+                </table>
+                </font>
+                </section>
+
+                <section>
+                    <a href='http://axelrod.readthedocs.org/en/latest/index_of_strategies.html'>A lot of strategies...</a>
+                </section>
+
+                <section>
+                <img src='static/box_plot.svg' width=750>
+                </section>
+
+                <section>
+                <img src='static/eco_plot.svg' width=750>
+                </section>
+
+                <section>
+                <h3>Demonstration</h3>
+                </section>
+
+                <section>
+                <img src='static/folk_theorem.png' width=750>
+                </section>
+
+                <section>
+                <h3>Applications of Game Theory</h3>
+                <ul>
+                    <li>Economics</li>
+                    <li>Biology</li>
+                    <li>Computer Science</li>
+                </ul>
+                </section>
+
+                <section>
+                    <img height=500 src='static/nash.jpg'>
+                    <p class='fragment'>(1928-2015)<p>
+                </section>
+
+                <section>
+                    <h3>Brouwer's fixed point theorem</h3>
+                    <img height=400 src='static/brouwer_fixed_point_theorem.svg'>
+                </section>
+
+                <section>
+                    <img height=600 src='static/beautiful_mind.jpg'>
+                </section>
+
+                <section>
+                    <h3>Operational Research</h3>
+                </section>
+
+                <section>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/UHBG5e1OS5U?rel=0" frameborder="0" allowfullscreen></iframe>
+                </section>
+
+                <section>
+                <h3><a href='http://www.learnaboutor.co.uk/'>www.learnaboutor.co.uk</a></h3>
+                </section>
+
+                <section>
+					<p>
+                    <a href='https://plus.google.com/+VincentKnight'>+VincentKnight</a><br>
+                    <a href='https://twitter.com/drvinceknight'>@drvinceknight</a><br>
+                    <a href='http://vknight.org/'>vknight.org</a><br>
+					</p>
+					<p>
+                    <a href='http://vknight.org/Talks'>vknight.org/Talks</a><br>
+					</p>
+                </section>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

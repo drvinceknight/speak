@@ -1,0 +1,50 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+
+% Settings
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+% Better fonts
+\usepackage{DejaVuSansMono}
+
+% Colors
+\definecolor{foreground}{RGB}{255,255,255}
+\definecolor{background}{RGB}{24,24,24}
+\definecolor{title}{RGB}{107,174,214}
+\definecolor{gray}{RGB}{155,155,155}
+\definecolor{subtitle}{RGB}{102,255,204}
+\definecolor{hilight}{RGB}{102,255,204}
+\definecolor{vhilight}{RGB}{255,111,207}
+
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{subtitle}{fg=subtitle}
+\setbeamercolor{institute}{fg=gray}
+\setbeamercolor{normal text}{bg=cyan!10}
+\setbeamercolor{block body}{bg=cyan!20,fg=black}
+
+\setbeamercolor{item}{fg=black} % color of bullets
+\setbeamercolor{subitem}{fg=gray}
+\setbeamercolor{itemize/enumerate subbody}{fg=black}
+\setbeamertemplate{itemize subitem}{{\textendash}}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
+
+% New commands
+\newcommand{\backgroundimage}[2]{
+\usebackgroundtemplate{%             declare it
+\tikz[overlay,remember picture] \node[opacity=#1, at=(current page.center)] {
+   \includegraphics[height=\paperheight,width=\paperwidth]{#2}};
+}
+}
+
+\newcommand{\nobackgroundimage}{
+\usebackgroundtemplate{}
+}
+
+
+
+
+\mode<all>

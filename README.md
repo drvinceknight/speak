@@ -1,3 +1,7 @@
-# Speak
+Talks
+=====
 
-A repository to contain all my slides for talks.
+A repository for my talks
+
+The website that is sevred by gh-pages is built using
+[ghtalks](https://github.com/drvinceknight/ghtalks).

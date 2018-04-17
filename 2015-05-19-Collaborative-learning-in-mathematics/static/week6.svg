@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2178.2812"
+   height="1022.8488"
+   id="svg6116"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="week6.svg"
+   inkscape:export-filename="/Users/vince/Talks/2015-05-19-Collaborative-learning-in-mathematics/static/week6.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs6118">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path6837"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.24748737"
+     inkscape:cx="1002.0076"
+     inkscape:cy="431.84603"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1362"
+     inkscape:window-height="723"
+     inkscape:window-x="4"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata6121">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1089.4375,-473.21875)">
+    <rect
+       style="fill:#ffeeaa;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect6727"
+       width="434.28571"
+       height="800"
+       x="1091.4286"
+       y="475.21933" />
+    <rect
+       y="475.21933"
+       x="1525.4286"
+       height="800"
+       width="434.28571"
+       id="rect6729"
+       style="fill:#ff8080;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       style="fill:#ff8080;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect6731"
+       width="434.28571"
+       height="800"
+       x="1961.4286"
+       y="475.21933" />
+    <rect
+       y="475.21933"
+       x="2397.4285"
+       height="800"
+       width="434.28571"
+       id="rect6733"
+       style="fill:#80ffb3;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       style="fill:#80ffb3;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect6735"
+       width="434.28571"
+       height="800"
+       x="2831.4285"
+       y="475.21933" />
+    <text
+       xml:space="preserve"
+       style="font-size:100px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Bold"
+       x="1200"
+       y="560.93359"
+       id="text6752"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6754"
+         x="1200"
+         y="560.93359" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Helvetica Neue Bold"
+       x="1235.9482"
+       y="544.62732"
+       id="text6756"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6758"
+         x="1235.9482"
+         y="544.62732"
+         style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Bold">Mon</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6760"
+       y="544.62732"
+       x="1686.4829"
+       style="font-size:40px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Helvetica Neue Bold"
+       xml:space="preserve"><tspan
+         style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Bold"
+         y="544.62732"
+         x="1686.4829"
+         id="tspan6762"
+         sodipodi:role="line">Tue</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Helvetica Neue Bold"
+       x="2108.5081"
+       y="544.62732"
+       id="text6764"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6766"
+         x="2108.5081"
+         y="544.62732"
+         style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Bold">Wed</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6768"
+       y="544.62732"
+       x="2556.0764"
+       style="font-size:40px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Helvetica Neue Bold"
+       xml:space="preserve"><tspan
+         style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Bold"
+         y="544.62732"
+         x="2556.0764"
+         id="tspan6770"
+         sodipodi:role="line">Thu</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Helvetica Neue Bold"
+       x="3007.5239"
+       y="544.62732"
+       id="text6772"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6774"
+         x="3007.5239"
+         y="544.62732"
+         style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Bold">Fri</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot6780"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion6782"><rect
+           id="rect6784"
+           width="12.121831"
+           height="109.09647"
+           x="1151.5739"
+           y="813.96619" /></flowRegion><flowPara
+         id="flowPara6786"></flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:60px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Italic"
+       x="1112.0138"
+       y="852.86932"
+       id="text7371"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="1112.0138"
+         y="852.86932"
+         id="tspan7373"><tspan
+           x="1112.0138"
+           y="852.86932"
+           id="tspan7375">Introduction to </tspan></tspan><tspan
+         sodipodi:role="line"
+         x="1112.0138"
+         y="927.86932"
+         id="tspan7377"><tspan
+           x="1112.0138"
+           y="927.86932"
+           id="tspan7379">Python</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:60px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Italic"
+       x="2472.623"
+       y="671.04187"
+       id="text7381"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="2472.623"
+         y="671.04187"
+         id="tspan7383"><tspan
+           x="2472.623"
+           y="671.04187"
+           id="tspan7385">Hackathon</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:60px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Italic"
+       x="2482.1641"
+       y="1204.4025"
+       id="text7393"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="2482.1641"
+         y="1204.4025"
+         id="tspan7395"><tspan
+           x="2482.1641"
+           y="1204.4025"
+           id="tspan7397">Feedback</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:60px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Italic"
+       x="2700.3569"
+       y="1467.4076"
+       id="text7399"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="2700.3569"
+         y="1467.4076"
+         id="tspan7401"><tspan
+           x="2700.3569"
+           y="1467.4076"
+           id="tspan7403">Assessment</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:60px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Italic"
+       x="2888.0103"
+       y="671.04187"
+       id="text7387"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="2888.0103"
+         y="671.04187"
+         id="tspan7389"><tspan
+           x="2888.0103"
+           y="671.04187"
+           id="tspan7391">Hackathon</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 2396.0818,1379.6516 820.2439,0"
+       id="path6828"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

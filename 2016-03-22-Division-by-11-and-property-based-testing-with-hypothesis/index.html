@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Division by 11 and property based testing with Hypothesis</title>
+
+		<meta name="description" content="A demo of hypothesis given at the
+        Collaborations Workshorp 2016">
+		<meta name="author" content="Vince Knight">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="../reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/css/theme/solarized.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ?
+            '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+                <section data-markdown>
+                    ### Division by 11 and property based testing with hypothesis
+                    [#Collabw16](https://twitter.com/hashtag/Collabw16?src=hash)
+
+                    [@drvinceknight](https://twitter.com/drvinceknight)
+
+                </section>
+
+
+                <section>
+					<pre><code data-trim>
+>>> for k in range(10):
+...     print(11 * k)
+0
+11
+22
+33
+44
+55
+66
+77
+88
+99
+
+					</code></pre>
+                </section>
+
+
+                <section>
+                    <quote>
+                    A number is divisible by 11 if and only if the alternating
+                    (in sign) sum of the number’s digits is 0.
+                    </quote>
+                    <p class=fragment>
+                    $$f(11) = 1-1$$
+                    $$f(22) = 2-2$$
+                    $$f(121) = 1-2+1$$
+                    </p >
+                </section>
+
+                <section>
+                `main.py`
+                    <pre><code>
+def divisible_by_11(number):
+    """Uses above criterion to check if number is divisible by 11"""
+    string_number = str(number)
+    alternating_sum = sum([(-1) ** i * int(d) for i, d
+                           in enumerate(string_number)])
+    return alternating_sum == 0
+                    </code></pre>
+                </section>
+
+                <section>
+                    <pre><code>
+>>> import main
+>>> for k in range(11):
+...     print(main.divisible_by_11(11 * k))
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+
+                    </code></pre>
+                </section>
+
+                <section>
+                `test_main.py`
+                    <pre><code>
+import unittest
+import main
+
+class TestDivisible(unittest.TestCase):
+    def test_divisible_by_11(self):
+
+        for k in range(10):
+            self.assertTrue(main.divisible_by_11(11 * k))
+            self.assertFalse(main.divisible_by_11(11 * k + 1))
+
+        # Some more examples
+        self.assertTrue(main.divisible_by_11(121))
+        self.assertFalse(main.divisible_by_11(123))
+                    </code></pre>
+                </section>
+
+                <section>
+                    <pre><code>
+$ python3 -m unittest test_main
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+                    </code></pre>
+                </section>
+
+                <section>
+                <img width=500 src="img/disaster.gif">
+                <p class=fragment>This is how we break mathematics</p>
+                </section>
+
+                <section>
+                `test_property_main.py`
+                    <pre><code>
+import unittest
+import main
+
+from hypothesis import given
+from hypothesis.strategies import integers
+
+class TestDivisible(unittest.TestCase):
+
+    @given(k=integers(min_value=1))
+    def test_divisible_by_11(self, k):
+        self.assertTrue(main.divisible_by_11(11 * k))
+                    </code></pre>
+                </section>
+
+                <section>
+                    <pre><code>
+$ python3 -m unittest test_property_main
+Falsifying example: test_divisible_by_11(self=<test_property_main.TestDivisible testMethod=test_divisible_by_11>, k=19)
+F
+======================================================================
+FAIL: test_divisible_by_11 (test_property_main.TestDivisible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_property_main.py", line 10, in test_divisible_by_11
+    def test_divisible_by_11(self, k):
+  File "/usr/local/lib/python2.7/site-packages/hypothesis/core.py", line 502, in wrapped_test
+    print_example=True, is_final=True
+  File "/usr/local/lib/python2.7/site-packages/hypothesis/executors.py", line 57, in default_new_style_executor
+    return function(data)
+  File "/usr/local/lib/python2.7/site-packages/hypothesis/core.py", line 103, in run
+    return test(*args, **kwargs)
+  File "test_property_main.py", line 11, in test_divisible_by_11
+    self.assertTrue(main.divisible_by_11(11 * k))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.022s
+                    </code></pre>
+                </section>
+
+
+                <section>
+                `main.py`
+                    <pre><code>
+def divisible_by_11(number):
+    """Uses **correct** criterion to check if number is divisible by 11"""
+    string_number = str(number)
+    alternating_sum = sum([(-1) ** i * int(d) for i, d
+                           in enumerate(string_number)])
+    return alternating_sum % 11 == 0
+                    </code></pre>
+                </section>
+
+                <section>
+                <h2>Shrinking</h2>
+
+                <p class=fragment><a href="https://hypothesis.readthedocs.org/en/latest/">hypothesis.readthedocs.org</a></p>
+                </section>
+
+                <section>
+                <a href="https://twitter.com/AxelrodPython/status/711567968925294593"><img width=500 src="img/tweet.png"></a>
+                </section>
+
+                <section>
+                <p>Property based testing:</p>
+
+                <p>Allowing reproducibility of what you have not done yet</p>
+                </section>
+		</div>
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../reveal.js/plugin/notes/notes.js', async: true },
+                    { src: '../reveal.js/plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

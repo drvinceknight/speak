@@ -1,0 +1,590 @@
+\documentclass{beamer}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{calc, shapes, snakes}
+\usepackage[algosection]{algorithm2e}
+
+\newcommand{\NH}{\text{NH}}
+\newcommand{\RG}{\text{RG}}
+
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+
+\frame{
+
+
+\centering
+\Huge{Emergency units and time dependent queueing games}
+\large{\href{https://twitter.com/drvinceknight}{@drvinceknight}}
+
+}
+
+
+\frame{
+    \Huge
+    \[
+        \begin{pmatrix}
+        (2,2)&(5,0)\\
+        (0,5)&(4,4)
+        \end{pmatrix}
+    \]
+}
+
+\frame{
+
+\begin{columns}
+\column{.5\textwidth}
+\begin{itemize}
+\item $k=1$
+\item $\mathcal{P}_1=\{1,2\}$
+\item $c_1=1$ and $c_2=x$
+\item $r=1$
+\end{itemize}
+\column{.5\textwidth}
+\includegraphics[width=5cm]{./Images/PigousExample.pdf}
+\end{columns}\vspace{.5cm}
+The Nash flow minimises:
+\begin{align}\Phi(y,1-y)&=\sum_{e=1}^2\int_{0}^{f_e}c_e(x)dx=\int_{0}^{y}1dx+\int_{0}^{1-y}xdx&\nonumber\\
+&=y+{(1-y)^2\over2}={1\over2}+{y^2\over 2}\nonumber\\
+&\Rightarrow\tilde f=(0,1)\nonumber
+\end{align}
+}
+
+\frame{
+\begin{center}\includegraphics[width=10cm]{./Images/Hospital_Choices.pdf}\end{center}}
+
+\frame{
+\begin{columns}
+\column{.25\textwidth}
+\begin{itemize}
+\item $k=m$
+\item $\left|\mathcal{P}_i\right|=n+1$
+\item $r_i=\Lambda_i$
+\end{itemize}
+\column{.75\textwidth}
+\only<1>{\begin{center}\includegraphics[width=8.5cm]{./Images/Hospital_Routing_Game.pdf}\end{center}}
+\only<2>{\begin{center}\includegraphics[width=8.5cm]{./Images/Hospital_Routing_Game_1.pdf}\end{center}}
+\end{columns}}
+
+\frame{
+\textbf{Theorem}
+Assuming $\sum_{i=1}^{m}\Lambda_i<\sum_{j=1}^nc_j\mu_j$ we have:
+$$\lim_{\beta_i\to\infty}PoA(\beta)<\infty\text{ for all }i\in[m]$$
+\begin{center}\it{The price of anarchy increases with worth of service, up to a point.}\end{center}
+\textbf{Proof.}
+\begin{itemize}
+\item$ \lim_{\beta_i\to\infty}\lambda^*=k^*$ and $ \lim_{\beta_i\to\infty}\tilde\lambda=\tilde k$
+\item As $\beta_i\to\infty$: $$\sum_{i=1}^m\Lambda_i=\sum_{i=1}^m\sum_{j=1}^n\lambda^*_{ij}=\sum_{i=1}^m\sum_{j=1}^n\tilde \lambda_{ij}$$
+\item $PoA(\beta)<\infty$
+\end{itemize}
+}
+
+\frame{
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{./Images/PoA_Healthcare.pdf}
+    \end{center}
+}
+\frame{
+        \textbf{Price of Anarchy in Public Services} \textit{EJORS}, 2013.
+}
+
+
+\frame{
+    \begin{center}
+        {\Huge What about the controllers?}\\
+        \vspace{1cm}
+    \end{center}
+        \pause
+        S. Deo and I. Gurvich. \textbf{Centralized vs. Decentralized Ambulance Diversion: A Network Perspective.} \textit{Management Science}, May 2011.
+}
+
+\frame{
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{./Images/RG_state_dependent_model.jpg}
+    \end{center}
+    \pause
+    \textbf{Mathematical modelling of patient flows to predict critical care capacity required following the merger of two District General Hospitals into one.}, \textit{Anaesthesia}
+}
+
+\frame{
+\begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        \node (A) at (0,0) [draw] {RG};
+        \node (B) at (2,0) [draw] {NH};
+        \draw [->] (-1,0) -- (A);
+        \draw [->] (3,0) -- (B);
+        \draw [->] (-1,0) -- ($(A)+(-.5,0)$) -- ($(A)+(-.5,.5)$) -- ($(A)+(.5,.5)$) -- ($(A)+(.5,.1)$) -- ($(B)+(-.4,.1)$);
+        \draw [->] (3,0) -- ($(B)+(.5,0)$) -- ($(B)+(.5,-.5)$) -- ($(B)+(-.5,-.5)$) -- ($(B)+(-.5,-.1)$) -- ($(A)+(.4,-.1)$);
+        \draw [->] (3,0) -- (B);
+        \node at ($(A) + (0,.8)$) {Divert?};
+        \node at ($(B) + (0,-.8)$) {Divert?};
+    \end{tikzpicture}
+\end{center}
+}
+
+\frame{
+\begin{center}
+    \begin{tikzpicture}
+        \draw  (0,0) rectangle (4,3);
+        \draw [dashed, red, thick] (0,1) -- (4,1);
+        \draw [dashed, red, thick] (3,0) -- (3,3);
+        \node at (-.5,1) {$K_{\NH}$};
+        \node at (3,3.25) {$K_{\RG}$};
+        \node at (1.5,2) {$\lambda_{h}^{(a)}$};
+        \node at (3.5,2) {$\lambda_{h}^{(b)}$};
+        \node at (1.5,.5) {$\lambda_{h}^{(c)}$};
+        \node at (3.5,.5) {$\lambda_{h}^{(d)}$};
+    \end{tikzpicture}
+\end{center}
+}
+
+\frame{
+\begin{center}
+    \only<1>{
+        \input{mc.tex}
+    }
+    \only<2>{
+    \begin{tikzpicture}[scale=1, every node/.style={scale=1}]
+    % -----------------------------------------------
+    % Boundaries ------------------------------------
+    % -----------------------------------------------
+    \draw [dashed, line width=1mm, red, opacity=.3] (2,-3) -- (10,-3);
+    \draw [dashed, line width=1mm, red, opacity=.3] (6,1) -- (6,-7);
+    %\tikzstyle{state}=[ellipse, draw, fill=blue!10, minimum width=2cm];
+    %\tikzstyle{state}=[rectangle, draw, fill=blue!10, minimum width=2cm];
+    \tikzstyle{state}=[minimum width=2cm, font=\boldmath];
+
+    % -----------------------------------------------
+    % Fourth row--------------------------------------
+    % -----------------------------------------------
+    \node (ellipsisd1) at ($(0,0) + (3,0)$) {$\dots$};
+    \node(dk) at ($(ellipsisd1) + (3,0)$) {$\vdots$};
+    \node (ellipsisd2) at ($(dk) + (3,0)$) {$\dots$};
+    % Transitions -----------------------------------
+    % On Row:
+    \draw (ellipsisd1) edge[out=45,in=135,->,thick] node [above] {\tiny$\lambda_{\RG}^{(a)}$} (dk);
+    \draw (ellipsisd1) edge[out=-45,in=-135,<-,thick] node [below] {\tiny$\mu_{\RG}$} (dk);
+
+    \draw (dk) edge[out=45,in=135,->,thick] node [above] {\tiny$\lambda_{\RG}^{(b)}$} (ellipsisd2);
+    \draw (dk) edge[out=-45,in=-135,<-,thick] node [below] {\tiny$\mu_{\RG}$} (ellipsisd2);
+
+    % -----------------------------------------------
+    % Fifth row--------------------------------------
+    % -----------------------------------------------
+    \node (ellipsise1) at ($(0,-3) + (3,0)$) {$\dots$};
+    \node(ek) [state] at ($(ellipsise1) + (3,0)$) {$(K_{\NH},K_{\RG})$};
+    \node (ellipsise2) at ($(ek) + (3,0)$) {$\dots$};
+    % Transitions -----------------------------------
+    % On Row:
+    \draw (ellipsise1) edge[out=45,in=135,->,thick] node [above] {\tiny$\lambda_{\RG}^{(c)}$} (ek);
+    \draw (ellipsise1) edge[out=-45,in=-135,<-,thick] node [below] {\tiny$\mu_{\RG}$} (ek);
+
+    \draw (ek) edge[out=45,in=135,->,thick] node [above] {\tiny$\lambda_{\RG}^{(d)}$} (ellipsise2);
+    \draw (ek) edge[out=-45,in=-135,<-,thick] node [below] {\tiny$\mu_{\RG}$} (ellipsise2);
+
+    % With previous row:
+
+    \draw (ellipsisd1) edge[out=-125,in=125,->,thick] node [left] {\tiny$\lambda_{\NH}^{(a)}$} (ellipsise1);
+    \draw (ellipsisd1) edge[out=-55,in=55,<-,thick] node [right] {\tiny$\mu_{\NH}$} (ellipsise1);
+
+    \draw (dk) edge[out=-125,in=125,->,thick] node [left] {\tiny$\lambda_{\NH}^{(b)}$} (ek);
+    \draw (dk) edge[out=-55,in=55,<-,thick] node [right] {\tiny$\mu_{\NH}$} (ek);
+
+    \draw (ellipsisd2) edge[out=-125,in=125,->,thick] node [left] {\tiny$\lambda_{\NH}^{(b)}$} (ellipsise2);
+    \draw (ellipsisd2) edge[out=-55,in=55,<-,thick] node [right] {\tiny$\mu_{\NH}$} (ellipsise2);
+    % Sixth row--------------------------------------
+    \node (ellipsisf1) at ($(3,-3) + (0,-3)$) {$\dots$};
+    \node(fk) at ($(ellipsisf1) + (3,0)$) {$\vdots$};
+    \node (ellipsisf2) at ($(fk) + (3,0)$) {$\dots$};
+    % Transitions -----------------------------------
+    % On Row:
+
+    \draw (ellipsisf1) edge[out=45,in=135,->,thick] node [above] {\tiny$\lambda_{\RG}^{(c)}$} (fk);
+    \draw (ellipsisf1) edge[out=-45,in=-135,<-,thick] node [below] {\tiny$\mu_{\RG}$} (fk);
+
+    \draw (fk) edge[out=45,in=135,->,thick] node [above] {\tiny$\lambda_{\RG}^{(d)}$} (ellipsisf2);
+    \draw (fk) edge[out=-45,in=-135,<-,thick] node [below] {\tiny$\mu_{\RG}$} (ellipsisf2);
+
+    % With previous row:
+
+    \draw (ellipsise1) edge[out=-125,in=125,->,thick] node [left] {\tiny$\lambda_{\NH}^{(c)}$} (ellipsisf1);
+    \draw (ellipsise1) edge[out=-55,in=55,<-,thick] node [right] {\tiny$\mu_{\NH}$} (ellipsisf1);
+
+    \draw (ek) edge[out=-125,in=125,->,thick] node [left] {\tiny$\lambda_{\NH}^{(d)}$} (fk);
+    \draw (ek) edge[out=-55,in=55,<-,thick] node [right] {\tiny$\mu_{\NH}$} (fk);
+
+    \draw (ellipsise2) edge[out=-125,in=125,->,thick] node [left] {\tiny$\lambda_{\NH}^{(d)}$} (ellipsisf2);
+    \draw (ellipsise2) edge[out=-55,in=55,<-,thick] node [right] {\tiny$\mu_{\NH}$} (ellipsisf2);
+
+    \end{tikzpicture}
+    }
+\end{center}
+}
+
+\frame{
+$$
+A =
+\begin{pmatrix}
+(U_{\NH}(1,1)-t)^2&\dots&(U_{\NH}(1,c_{\RG})-t)^2\\
+(U_{\NH}(2,1)-t)^2&\dots&(U_{\NH}(2,c_{\RG})-t)^2\\
+\vdots&\ddots&\vdots\\
+(U_{\NH}(c_{\NH},1)-t)^2&\dots&(U_{\NH}(c_{\NH},c_{\RG})-t)^2\\
+\end{pmatrix}
+$$
+\vspace{1cm}
+$$
+B =
+\begin{pmatrix}
+(U_{\RG}(1,1)-t)^2&\dots&(U_{\RG}(1,c_{\RG})-t)^2\\
+(U_{\RG}(2,1)-t)^2&\dots&(U_{\RG}(2,c_{\RG})-t)^2\\
+\vdots&\ddots&\vdots\\
+(U_{\RG}(c_{\RG},1)-t)^2&\dots&(U_{\RG}(c_{\RG},c_{\RG})-t)^2\\
+\end{pmatrix}
+$$
+}
+
+\frame{
+
+\textbf{Theorem.}\\
+Let $f_{h}(k):[1,c_{\bar h}]\to[1,c_h]$ be the best response of player $h\in\{\NH, \RG\}$ to the diversion threshold of $\bar h\ne h$ ($\bar h\in\{\NH, \RG\}$).
+
+If $f_{h}(k)$ is a non-decreasing function in $k$ then the game has at least one Nash Equilibrium in Pure Strategies.\\
+}
+
+\frame{
+\begin{center}
+\includegraphics[width=.8\textwidth]{./Images/model2targetvdemand.pdf}
+\end{center}
+}
+
+\frame{
+\begin{center}
+\includegraphics[width=.8\textwidth]{./Images/argminPoAmodel2.pdf}
+\end{center}
+}
+
+\frame{ \textbf{Measuring the Price of Anarchy in Critical Care Unit
+    Interactions}, \textit{Journal of Operational Research}
+
+}
+
+\frame{
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{./Images/photo.jpg}
+    \end{center}
+}
+
+\frame{
+    \begin{tikzpicture}
+        % First hospital
+        \draw [fill=blue!20] (0,0) rectangle (3,2);
+        \draw [fill=red!20] (4,.5) rectangle (6,1.5);
+        \draw [<-] (3,1) -- (4,1);
+        \node at (3.5, 1.3) {\tiny{$1-p^{(1)}$}};
+        \node at (1.5,2.5) {$C^{(1)} - \color{blue}{c^{(1)}}$};
+        \node at (5,2) {\color{blue}{$c^{(1)}$}};
+        \node at (1.5,1) {$\mu_2^{(1)}$};
+        \node at (5,1) {$\mu_1^{(1)}$};
+
+        % Second hospital
+        \draw [fill=red!20] (5,-3.5) rectangle (7,-4.5);
+        \draw [fill=blue!20] (8,-3) rectangle (11,-5);
+        \draw [<-] (8,-4) -- (7,-4);
+        \node at (7.5, -3.7) {\tiny{$1-p^{(2)}$}};
+        \node at (6,-5) {$\color{red}{c^{(2)}}$};
+        \node at (9.5,-5.5) {$C^{(1)} - \color{blue}{c^{(1)}}$};
+        \node at (6,-4) {$\mu_1^{(2)}$};
+        \node at (9.5,-4) {$\mu_2^{(2)}$};
+
+        % Ambulance
+        \node at (5.5,-1.75) {$\Lambda$};
+        \draw [->] (5.5,-1.5) -- (5.5,-.5);
+        \draw [->] (5.5,-2) -- (5.5,-3);
+    \end{tikzpicture}
+}
+
+\frame{
+\begin{center}
+\tikzstyle{level 1}=[level distance=4cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=4cm, sibling distance=2cm]
+\tikzstyle{level 3}=[level distance=4cm, sibling distance=1cm]
+\tikzstyle{Hosp} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+\begin{tikzpicture}[grow=right, sloped, scale=.8]
+\node[Hosp] {$H_1$}
+    child {node[Hosp] (a1) {$H_2$}
+        child {node[Hosp] (c1) {Am}
+            child {node[end, label=right:{$H_2$}] {}}
+            child {node[end, label=right:{$H_1$}] {}}
+            edge from parent
+            node[above] {$C^{(2)} - 1$}
+            edge from parent coordinate[pos=1] (b31)
+        }
+        child {node[Hosp] (c1) {Am}
+            child {node[end, label=right:{$H_2$}] {}}
+            child {node[end, label=right:{$H_1$}] {}}
+            edge from parent
+            node[above] {$1$}
+            edge from parent coordinate[pos=1] (b41)
+        }
+        edge from parent
+        node[above] {$C^{(1)} - 1$}
+        edge from parent coordinate[pos=0.8] (a11)
+    }
+    child {node[Hosp] (a2) {$H_2$}
+        child {node[Hosp] (c1) {Am}
+            child {node[end, label=right:{$H_2$}] {}}
+            child {node[end, label=right:{$H_1$}] {}}
+            edge from parent
+            node[above] {$C^{(2)} - 1$}
+            edge from parent coordinate[pos=1] (b11)
+            }
+        child {node[Hosp] (c1) {Am}
+            child {node[end, label=right:{$H_2$}] {}}
+            child {node[end, label=right:{$H_1$}] {}}
+            edge from parent
+            node[above] {$1$}
+            edge from parent coordinate[pos=1] (b21)
+            }
+        edge from parent
+            node[above] {$1$}
+        edge from parent coordinate[pos=0.8] (a21)
+    };
+\draw[bend right] (a11) to (a21);
+\draw[bend right] (b11) to (b21);
+\draw[bend right] (b31) to (b41);
+\draw[dashed] (a1) to(a2);
+\end{tikzpicture}
+\end{center}
+}
+
+\frame{
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{./Images/CCCC-76W.pdf}
+    \end{center}
+}
+
+\frame{
+	\centering
+    \begin{tikzpicture}
+        % A&E
+        \draw [fill=red!20] (4,.5) rectangle (6,1.5);
+        \node at (5,2) {\color{blue}{$c$}};
+        \node at (5,1) {$\mu$};
+
+        % Patients
+        \node at (5,-1.75) {$\Lambda$};
+        \draw [->] (5,-1.5) -- (5, -.5);
+    \end{tikzpicture}
+}
+
+\frame{
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8}]
+            % Line
+            \draw (0,0) -- (3.5,0);
+            \draw (4.5,0) -- (6,0);
+            % End ticks
+            \draw [very thick] (0,-.25) -- (0,.25);
+            \draw [very thick] (6,-.25) -- (6,.25);
+            % Mid ticks
+            \draw [thick] (1,-.125) -- (1,.125);
+            \draw [thick] (2,-.125) -- (2,.125);
+            \draw [thick] (3,-.125) -- (3,.125);
+            \draw [thick] (5,-.125) -- (5,.125);
+            % Parameters: j
+            \node at (.5,.25)  {$j=1$};
+            \node at (1.5,.25) {$j=2$};
+            \node at (2.5,.25) {$j=3$};
+            \node at (5.5,.25) {$j=n$};
+            % Parameters: mu, c
+            \node at (.5,-.25) [draw, scale=.7] {$ c_1,\mu_1$};
+            \node at (1.5,-.25) [draw, scale=.7] {$c_2,\mu_2$};
+            \node at (2.5,-.25) [draw, scale=.7] {$c_3,\mu_3$};
+            \node at (5.5,-.25) [draw, scale=.7] {$c_n,\mu_n$};
+            % Parameters: lambda
+            \node at (.5, .75) [draw, scale=.7, ellipse] {$ \lambda_1$};
+            \node at (1.5,.75) [draw, scale=.7, ellipse] {$\lambda_2$};
+            \node at (2.5,.75) [draw, scale=.7, ellipse] {$\lambda_3$};
+            \node at (5.5,.75) [draw, scale=.7, ellipse] {$\lambda_n$};
+            % Ellipsis
+            \node at (4,0) {$\dots$};
+            % Underbrace
+            \draw [ thick, decoration={ brace, mirror, raise=0.5cm }, decorate ] (0,0) -- (6,0) node [pos=.5, anchor=north, yshift=-.75cm] {$T$};
+        \end{tikzpicture}
+    \end{center}
+}
+
+\frame{
+	\centering{
+			\begin{tikzpicture}
+				% Line
+				\draw (0,0) -- (3.5,0);
+				\draw (4.5,0) -- (6,0);
+				% End ticks
+				\draw [very thick] (0,-.25) -- (0,.25);
+				\draw [very thick] (6,-.25) -- (6,.25);
+				% Mid ticks
+				\draw [thick] (1,-.125) -- (1,.125);
+				\draw [thick] (2,-.125) -- (2,.125);
+				\draw [thick] (3,-.125) -- (3,.125);
+				\draw [thick] (5,-.125) -- (5,.125);
+				% Arrival
+				\node (arrival) at (.5,0) [draw, circle, fill=blue] {} node [below=.3cm, right] {\tiny arrival};
+				% Decisions
+				\draw (arrival) edge[out=40,in=135,->] node [above] {?} (1.75,0);
+				\draw (arrival) edge[out=65,in=125,->] node [above] {?} (3.25,0);
+				\draw (arrival) edge[out=85,in=115,->] node [above] {?} (5.5,0);
+				% Ellipsis
+				\node at (4,0) {$\dots$};
+			\end{tikzpicture}
+			}
+}
+
+\frame{
+	\centering{
+			\begin{tikzpicture}
+				\node (arrival) at (0,0) [draw, circle, fill=blue] {} node [below=.15cm] {\tiny{arrival}};
+				% Dummy states
+				\node (d1) at ($(arrival) + (2,2)$) [draw, text width = .5cm, align=center] {?};
+				\node (d2) at ($(arrival) + (2,1.2)$) [draw, text width = .25cm, align=center] {?};
+				\node (d3) at ($(arrival) + (2,.4)$) [draw] {?};
+				% Service station
+				\node (service) at ($(arrival) + (5,0)$) [draw] {service};
+				% Decisions
+				\draw [->] (arrival) -- (service);
+				\draw [->] (arrival) -- (d1);
+				\draw [->] (arrival) -- (d2);
+				\draw [->] (arrival) -- (d3);
+				% Delays
+				\draw (d1) edge[out=0,in=180,->,dashed] (service);
+				\draw (d2) edge[out=0,in=180,->,dashed] (service);
+				\draw (d3) edge[out=0,in=180,->,dashed] (service);
+			\end{tikzpicture}
+			}
+}
+
+
+\frame{
+	\centering
+    \begin{tikzpicture}
+        % A&E
+        \draw [fill=red!20] (4,.5) rectangle (6,1.5);
+        \node at (5,2) {\color{blue}{$c$}};
+        \node at (5,1) {$\mu$};
+
+        % Patients
+        \node at (3,-1.75) {$\Lambda_1$};
+        \draw [->] (3,-1.5) -- (4.5, -.5);
+        \node at (5,-1.75) {$\Lambda_2$};
+        \draw [->] (5,-1.5) -- (5, -.5);
+        \node at (7,-1.75) {$\Lambda_3$};
+        \draw [->] (7,-1.5) -- (5.5, -.5);
+    \end{tikzpicture}
+}
+
+\frame{
+	\centering
+
+	    \begin{tikzpicture}[scale=.7]
+        % First generation
+        \draw (0,-.5) rectangle (3,1.5);
+            % Line
+            \draw (.25,0) -- (2.75,0);
+            % End ticks
+            \draw [very thick] (.25,-.25) -- (0.25,.25);
+            \draw [very thick] (2.75,-.25) -- (2.75,.25);
+            % Mid ticks
+            \draw [thick] (1,-.125) -- (1,.125);
+            \draw [thick] (2,-.125) -- (2,.125);
+            % Dots
+                % First node
+            \node at (.625,.25) [draw, circle, fill=blue] {};
+            \node at (.625,.5) [draw, circle, fill=blue] {};
+            \node at (.625,.75) [draw, circle, fill=red] {};
+                % Second node
+            \node at (1.5,.25) [draw, circle, fill=red] {};
+            \node at (1.5,.5) [draw, circle, fill=blue] {};
+            \node at (1.5,.75) [draw, circle, fill=red] {};
+            \node at (1.5,1) [draw, circle, fill=red] {};
+                % Red node
+            \node at (2.4,.25) [draw, circle, fill=red] {};
+            %\node (arrival) at (.5,0) [draw, circle, fill=blue] {} node [below=.3cm, right] {\tiny arrival};
+        % Second generation
+        \draw (5,-.5) rectangle (8,1.5);
+            % Line
+            \draw (5.25,0) -- (7.75,0);
+            % End ticks
+            \draw [very thick] (5.25,-.25) -- (5.25,.25);
+            \draw [very thick] (7.75,-.25) -- (7.75,.25);
+            % Mid ticks
+            \draw [thick] (6,-.125) -- (6,.125);
+            \draw [thick] (7,-.125) -- (7,.125);
+            % Dots
+                % First node
+            \node at (5.625,.25) [draw, circle, fill=blue] {};
+            \node at (5.625,.5) [draw, circle, fill=blue] {};
+            \node at (5.625,.75) [draw, circle, fill=red] {};
+                % Second node
+            \node at (6.5,.25) [draw, circle, fill=red] {};
+                % Red node
+            \node at (7.4,.25) [draw, circle, fill=red] {};
+            \node at (7.4,.5) [draw, circle, fill=red] {};
+            \node at (7.4,.75) [draw, circle, fill=red] {};
+            \node at (7.4,1) [draw, circle, fill=blue] {};
+        % Third generation
+        \draw (10,-.5) rectangle (13,1.5);
+            % Line
+            \draw (10.25,0) -- (12.75,0);
+            % End ticks
+            \draw [very thick] (10.25,-.25) -- (10.25,.25);
+            \draw [very thick] (12.75,-.25) -- (12.75,.25);
+            % Mid ticks
+            \draw [thick] (11,-.125) -- (11,.125);
+            \draw [thick] (12,-.125) -- (12,.125);
+            % Dots
+                % First node
+            \node at (10.625,.25) [draw, circle, fill=blue] {};
+            \node at (10.625,.5) [draw, circle, fill=blue] {};
+            \node at (10.625,.75) [draw, circle, fill=blue] {};
+                % Second node
+            \node at (11.5,.25) [draw, circle, fill=red] {};
+            \node at (11.5,.5) [draw, circle, fill=red] {};
+                % Red node
+            \node at (12.4,.25) [draw, circle, fill=red] {};
+            \node at (12.4,.5) [draw, circle, fill=red] {};
+            \node at (12.4,.75) [draw, circle, fill=red] {};
+        % Arrows
+            \draw [->] (3.5,.5) -- (4.5,.5);
+            \draw [->] (8.5,.5) -- (9.5,.5);
+    \end{tikzpicture}
+}
+
+\frame{
+        Generate population for all sources\;\\
+        \While{$\text{clock} < \text{simulation time}$}{
+            {Randomly group agents from each source\;}\\
+            {Run a simulation of process\;}\\
+            {Identify worst performing agents\;}\\
+            {Reproduce agents with mutation\;}
+            }
+}
+
+\frame{
+	\centering
+		\includegraphics[width=.8\textwidth]{./Images/damaging_behaviour_lambda.pdf}
+}
+
+\frame{
+\begin{center}
+\href{https://plus.google.com/+VincentKnight/posts}{+Vincent.Knight}\\
+\href{https://twitter.com/drvinceknight}{@drvinceknight}\\
+\framebox{\href{http://drvinceknight.github.io/Talks/}{vincent-knight.com/Talks}}
+\end{center}
+}
+
+\end{document}

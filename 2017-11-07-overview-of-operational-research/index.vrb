@@ -1,0 +1,28 @@
+\frametitle{Data}
+        \begin{center}
+            \begin{tabular}{llrr}
+                \toprule
+                & Sex & Height & Weight \\
+                \midrule
+                0 & M & 187.306088 & 72.233276 \\
+                1 & M & 170.595112 & 92.195728 \\
+                2 & F & 157.637346 & 64.835601 \\
+                3 & M & 162.010640 & 130.462244 \\
+                4 & F & 154.017198 & 81.568846 \\
+                $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
+                \bottomrule
+            \end{tabular}
+            \vspace{1cm}
+            \pause
+            \small{
+                \begin{minted}{python}
+      >>> import scipy.stats
+
+      >>> ttest = scipy.stats.ttest_ind(
+      ...    df[df['Sex']=='M']['Height'],
+      ...    df[df['Sex']=='F']['Height'])
+      >>> ttest.pvalue
+      0.070033630470421021
+                \end{minted}
+            }
+        \end{center}

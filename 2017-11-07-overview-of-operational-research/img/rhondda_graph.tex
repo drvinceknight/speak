@@ -1,0 +1,79 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\node[circle, draw=black, fill=yellow] (porth) at (1.24, -3.8) {}; % Porth
+\node[circle, draw=black, fill=yellow] (tonypandy) at (-1.24, -3.8) {}; % Tonypandy
+\node[circle, draw=black, fill=yellow] (penygraig) at (-3.24, -2.35) {}; % Penygraig
+\node[circle, draw=black, fill=yellow] (llwynypia) at (-4, 0) {}; % Llwynypia
+\node[circle, draw=black, fill=yellow] (wattstown) at (-3.24, 2.35) {}; % Wattstown
+\node[circle, draw=black, fill=yellow] (maerdy) at (-1.24, 3.8) {}; % Maerdy
+\node[circle, draw=black, fill=yellow] (ystrad) at (1.24, 3.8) {}; % Ystrad
+\node[circle, draw=black, fill=yellow] (penrhys) at (3.24, 2.35) {}; % Penrhys
+\node[circle, draw=black, fill=yellow] (treorchy) at (4, 0) {}; % Treorchy
+\node[circle, draw=black, fill=yellow] (treherbert) at (3.24, -2.35) {}; % Treherbert
+
+\node[fill=none, draw=none, text=black] at ($(porth) - (0, 0.75)$) {\Large{Porth}};
+\node[fill=none, draw=none, text=black] at ($(tonypandy) - (0, 0.75)$) {\Large{Tonypandy}};
+\node[fill=none, draw=none, text=black] at ($(penygraig) - (1.5, 0.5)$) {\Large{Penygraig}};
+\node[fill=none, draw=none, text=black] at ($(llwynypia) - (1.5, 0)$) {\Large{Llwynypia}};
+\node[fill=none, draw=none, text=black] at ($(wattstown) - (1.5, -0.5)$) {\Large{Wattstown}};
+\node[fill=none, draw=none, text=black] at ($(maerdy) + (0, 0.75)$) {\Large{Maerdy}};
+\node[fill=none, draw=none, text=black] at ($(ystrad) + (0, 0.75)$) {\Large{Ystrad}};
+\node[fill=none, draw=none, text=black] at ($(penrhys) + (1.5, 0.5)$) {\Large{Penrhys}};
+\node[fill=none, draw=none, text=black] at ($(treorchy) + (1.5, 0)$) {\Large{Treorchy}};
+\node[fill=none, draw=none, text=black] at ($(treherbert) + (1.5, -0.5)$) {\Large{Treherbert}};
+
+\draw[ultra thick, draw=cyan!27.0!orange] (porth) -- (wattstown);
+\draw[ultra thick, draw=cyan!43.0!orange] (porth) -- (penrhys);
+\draw[ultra thick, draw=cyan!76.0!orange] (porth) -- (maerdy);
+\draw[ultra thick, draw=cyan!31.0!orange] (porth) -- (penygraig);
+\draw[ultra thick, draw=cyan!31.0!orange] (porth) -- (tonypandy);
+\draw[ultra thick, draw=cyan!36.0!orange] (porth) -- (llwynypia);
+\draw[ultra thick, draw=cyan!53.0!orange] (porth) -- (ystrad);
+\draw[ultra thick, draw=cyan!78.0!orange] (porth) -- (treorchy);
+\draw[ultra thick, draw=cyan!96.0!orange] (porth) -- (treherbert);
+\draw[ultra thick, draw=cyan!27.0!orange] (wattstown) -- (penrhys);
+\draw[ultra thick, draw=cyan!60.0!orange] (wattstown) -- (maerdy);
+\draw[ultra thick, draw=cyan!47.0!orange] (wattstown) -- (penygraig);
+\draw[ultra thick, draw=cyan!47.0!orange] (wattstown) -- (tonypandy);
+\draw[ultra thick, draw=cyan!52.0!orange] (wattstown) -- (llwynypia);
+\draw[ultra thick, draw=cyan!36.0!orange] (wattstown) -- (ystrad);
+\draw[ultra thick, draw=cyan!62.0!orange] (wattstown) -- (treorchy);
+\draw[ultra thick, draw=cyan!80.0!orange] (wattstown) -- (treherbert);
+\draw[ultra thick, draw=cyan!47.0!orange] (penrhys) -- (maerdy);
+\draw[ultra thick, draw=cyan!47.0!orange] (penrhys) -- (penygraig);
+\draw[ultra thick, draw=cyan!32.0!orange] (penrhys) -- (tonypandy);
+\draw[ultra thick, draw=cyan!23.0!orange] (penrhys) -- (llwynypia);
+\draw[ultra thick, draw=cyan!10.0!orange] (penrhys) -- (ystrad);
+\draw[ultra thick, draw=cyan!35.0!orange] (penrhys) -- (treorchy);
+\draw[ultra thick, draw=cyan!54.0!orange] (penrhys) -- (treherbert);
+\draw[ultra thick, draw=cyan!96.0!orange] (maerdy) -- (penygraig);
+\draw[ultra thick, draw=cyan!79.0!orange] (maerdy) -- (tonypandy);
+\draw[ultra thick, draw=cyan!70.0!orange] (maerdy) -- (llwynypia);
+\draw[ultra thick, draw=cyan!56.0!orange] (maerdy) -- (ystrad);
+\draw[ultra thick, draw=cyan!81.0!orange] (maerdy) -- (treorchy);
+\draw[ultra thick, draw=cyan!100.0!orange] (maerdy) -- (treherbert);
+\draw[ultra thick, draw=cyan!21.0!orange] (penygraig) -- (tonypandy);
+\draw[ultra thick, draw=cyan!25.0!orange] (penygraig) -- (llwynypia);
+\draw[ultra thick, draw=cyan!38.0!orange] (penygraig) -- (ystrad);
+\draw[ultra thick, draw=cyan!62.0!orange] (penygraig) -- (treorchy);
+\draw[ultra thick, draw=cyan!81.0!orange] (penygraig) -- (treherbert);
+\draw[ultra thick, draw=cyan!9.0!orange] (tonypandy) -- (llwynypia);
+\draw[ultra thick, draw=cyan!23.0!orange] (tonypandy) -- (ystrad);
+\draw[ultra thick, draw=cyan!46.0!orange] (tonypandy) -- (treorchy);
+\draw[ultra thick, draw=cyan!65.0!orange] (tonypandy) -- (treherbert);
+\draw[ultra thick, draw=cyan!14.0!orange] (llwynypia) -- (ystrad);
+\draw[ultra thick, draw=cyan!37.0!orange] (llwynypia) -- (treorchy);
+\draw[ultra thick, draw=cyan!56.0!orange] (llwynypia) -- (treherbert);
+\draw[ultra thick, draw=cyan!25.0!orange] (ystrad) -- (treorchy);
+\draw[ultra thick, draw=cyan!44.0!orange] (ystrad) -- (treherbert);
+\draw[ultra thick, draw=cyan!19.0!orange] (treorchy) -- (treherbert);
+
+\end{tikzpicture}
+
+\end{document}

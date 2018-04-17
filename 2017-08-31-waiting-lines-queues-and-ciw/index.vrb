@@ -1,0 +1,14 @@
+\frametitle{}
+\begin{minted}{python}
+>>> dist = ['Exponential', 1]
+>>> N = ciw.create_network(Arrival_distributions=[dist],
+...                        Service_distributions=[dist],
+...                        Number_of_servers=[1])
+>>> seed = 0
+>>> max_customers = 5000
+>>> ciw.seed(seed)
+>>> Q = ciw.Simulation(N)
+>>> Q.simulate_until_max_customers(max_customers)
+>>> total_times, service_times = get_times(Q)
+
+        \end{minted}

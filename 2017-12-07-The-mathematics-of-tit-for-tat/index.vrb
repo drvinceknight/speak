@@ -1,0 +1,32 @@
+\frametitle{}
+\begin{columns}
+            \begin{column}{.4\textwidth}
+                \begin{center}
+                    \includegraphics[width=.8\textwidth]{\assetsfolder/Axelrod.jpg}
+                    \\
+                    Robert Axelrod
+                \end{center}
+            \end{column}
+            \pause
+            \begin{column}{.6\textwidth}
+                \begin{minted}[fontsize=\scriptsize]{python}
+>>> import axelrod as axl
+
+>>> players = (axl.TitForTat(),
+...            axl.Cooperator())
+>>> axl.Match(players, turns=5).play()
+[(C, C), (C, C), (C, C), (C, C), (C, C)]
+
+>>> players = (axl.TitForTat(),
+...            axl.Defector())
+>>> axl.Match(players, turns=5).play()
+[(C, D), (D, D), (D, D), (D, D), (D, D)]
+
+>>> players = (axl.TitForTat(),
+...            axl.Alternator())
+>>> axl.Match(players, turns=5).play()
+[(C, C), (C, D), (D, C), (C, D), (D, C)]
+
+                \end{minted}
+            \end{column}
+        \end{columns}

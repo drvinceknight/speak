@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The flipped learning environment for a large class</title>
+
+		<meta name="description" content="A talk given at a pedagogic seminar in
+        Cardiff">
+		<meta name="author" content="Vince Knight">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+                    <section>
+                        <h3>The flipped learning environment for a large class</h3>
+                        <p>
+                        <small><a href='https://plus.google.com/+VincentKnight'>+VincentKnight</a></small><br>
+                        <small><a href='https://twitter.com/drvinceknight'>@drvinceknight</a></small><br>
+                        <small><a href='http://vincent-knight.com/'>www.vincent-knight.com</a></small>
+                        </p>
+                        <p>
+                        <a href='http://vincent-knight.com/Talks/'>vincent-knight.com/Talks/</a>
+                        </p>
+                    </section>
+
+
+                    <!-- Optional slide to change theme in case does not work well on given beamer -->
+                    <section id="themes">
+                        <h2>Themes</h2>
+                        <p>
+                            reveal.js comes with a few themes built in: <br>
+                            <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+                            <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+                        </p>
+                    </section>
+				</section>
+
+                <section id="Sue" class="slide level1">
+                    <blockquote cite="Dr Sue Rigby">
+                        &ldquo;
+                        <font size="12">We can choose how we teach. We have to teach in a way that is fun.</font>
+                        &rdquo;
+                        <div align=right>Dr. Sue Rigby</div>
+                    </blockquote>
+                </section>
+
+                <section id="Mathematician" class="slide level1">
+                <img width=600 src=static/math_meme.png>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable>
+from __future__ import division
+import random
+class Drop():
+    def __init__(self, r=1):
+        self.x = (.5 - random.random()) * 2 * r
+        self.y = (.5 - random.random()) * 2 * r
+        self.incircle = (self.y) ** 2 + (self.x) ** 2 <= (r) ** 2
+
+N = 10000
+print 4 * len([k for k in range(N) if Drop().incircle]) / N
+                    </code></pre>
+                </section>
+
+                <section>
+                    <img src='static/darts.gif'>
+                </section>
+
+                <section id="Matt-Lunn" class="slide level1">
+                    <iframe src="https://player.vimeo.com/video/88630585" width="700" height="393" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </section>
+
+                <section id='Python, Sage and LaTeX'>
+                    <ul>
+                        <li><a
+                            href='https://cloud.sagemath.com/projects/1eca8c4d-8845-43ef-bc8f-c535734884fb/files/python-demo.ipynb'>Python</a></li>
+                        <li><a
+                            href='https://cloud.sagemath.com/projects/1eca8c4d-8845-43ef-bc8f-c535734884fb/files/sage-demo.sagews'>Sagemath</a></li>
+                        <li><a
+                            href='https://cloud.sagemath.com/projects/1eca8c4d-8845-43ef-bc8f-c535734884fb/files/latex-demo.tex'>LaTeX</a></li>
+                    </ul>
+                </section>
+
+                <section id='flipped_structure'>
+                    <img src='static/flipped_environment.svg'>
+                </section>
+
+                <section id="Structure">
+                    <img src="static/structure.png">
+                </section>
+
+                <section id='lab sheets'>
+                    <h2>Lab Sheets</h2>
+                </section>
+
+                <section id='class'>
+                    <img width=600 src="./static/class.jpg">
+                </section>
+
+                <section id='Class meeting'>
+                    <h2>Class meeting</h2>
+                </section>
+
+                <section>
+                    <h3>Completion of ticks</h3>
+                    <img src='static/tickable_completion.png'>
+                </section>
+
+                <section>
+                <img src='static/mark_distribution.png' height=500>
+                </section>
+
+                <section>
+                <img src='static/positive_2014-2015.png' height=500>
+                </section>
+
+                <section>
+                <img src='static/negative_2014-2015.png' height=500>
+                </section>
+
+                <section id='structure_again'>
+                    <img src='static/structure.png'>
+                </section>
+
+                <section>
+                    <img height=500 src='./static/example_minutes.jpg'>
+                </section>
+
+                <section>
+                    <img src='./static/grand_council.jpg'>
+                </section>
+
+                <section id='video_by_AL'>
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/QnLkBmGpufQ?rel=0"
+                    frameborder="0" allowfullscreen></iframe>
+                </section>
+
+                <section id='fightclub'>
+                    <a href='http://thefightclub.herokuapp.com/whowin/fight/35/17/' target='_blank'>Fight Club</a>
+                </section>
+
+                <section id='neil'>
+                    <a href='https://twitter.com/1neilcoles' target='_blank'>@1neilcoles</a>
+                </section>
+
+                <section>
+                    <blockquote cite="Freeman et al. 2014">
+                        &ldquo;
+                        <font size="12">Active learning increases student performance in science, engineering, and mathematics</font>
+                        &rdquo;
+                        <div align=right>Freeman et al. 2014</div>
+                    </blockquote>
+                </section>
+
+                <section id='video_by_AC'>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ase_HKWwILE?rel=0&start=1200" frameborder="0" allowfullscreen></iframe>
+                </section>
+
+                <section>
+                    <blockquote cite="poropat 2015">
+                        &ldquo;
+                        <font size="12">Other-rated personality and academic performance: evidence and implications </font>
+                        &rdquo;
+                        <div align=right>Poropat et al. 2015</div>
+                    </blockquote>
+                </section>
+
+                <section id="Imogen">
+                        <a href='https://twitter.com/Imogen_Dunne'>@Imogen_Dunne</a><br>
+                </section>
+
+
+                <section>
+                    <ol>
+                        <li>Agreeableness</li>
+                        <li>Extraversion</li>
+                        <li>Neuroticism</li>
+                        <li>Conscientiousness</li>
+                        <li>Openness1</li>
+                        <li>Openness2</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <img src='static/personality.png'>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable>
+Call:
+lm(formula = Average_Mark_Other_Modules ~ Conscientiousness,
+    data = Factors_with_marks)
+
+Residuals:
+    Min      1Q  Median      3Q     Max
+-31.566  -8.448   1.575   8.652  31.377
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)
+(Intercept)         62.668      1.345   46.60   <2e-16 ***
+Conscientiousness    3.075      1.366    2.25   0.0271 *
+                    </code></pre>
+                </section>
+
+                <section>
+                    <img src='static/effect_of_conscientousness_on_trad.png'>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable>
+Call:
+lm(formula = CfM_Total ~ Openness1, data = Factors_with_marks)
+
+Residuals:
+    Min      1Q  Median      3Q     Max
+-35.128  -7.733   0.497  10.046  22.899
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)   78.225      1.448  54.025  < 2e-16 ***
+Openness1      4.474      1.533   2.918  0.00458 **
+                    </code></pre>
+                </section>
+
+                <section>
+                    <img src='static/effect_of_openness_on_flipped.png'>
+                </section>
+
+                <section>
+                    <h2>So what?</h2>
+                    <ol>
+                        <li>Scaffolding.</li>
+                        <li>Interest.</li>
+                        <li class=fragment>Perhaps: this pedagogic approach incentives deep learning.</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Focus groups</h2>
+                    <blockquote >
+                        &ldquo;
+                        <font size="12">I think it’s just a module that you get out of it what you put in, so all of us round this table, clearly put plenty in.</font>
+                        &rdquo;
+                        <div align=right>Tutor I</div>
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Summary</h2>
+                    <ul>
+                        <li>Large flipped class.</li>
+                        <li>Research in to effect of personality of performance.</li>
+                        <li class=fragment>Not leaving anyone behind.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>
+                    <small><a href='https://plus.google.com/+VincentKnight'>+VincentKnight</a></small><br>
+                    <small><a href='https://twitter.com/drvinceknight'>@drvinceknight</a></small><br>
+                    <small><a href='http://vincent-knight.com/'>www.vincent-knight.com</a></small>
+                    </p>
+                    <p>
+                    <small><a href='https://twitter.com/Imogen_Dunne'>@Imogen_Dunne</a></small>
+                    </p>
+                    <p>
+                    <a href='http://vincent-knight.com/Talks/'>vincent-knight.com/Talks/</a>
+                    </p>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

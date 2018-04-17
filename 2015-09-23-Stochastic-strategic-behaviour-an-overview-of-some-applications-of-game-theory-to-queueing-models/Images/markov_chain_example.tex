@@ -1,0 +1,128 @@
+\begin{tikzpicture}[scale=.6, every node/.style={scale=0.6}]
+    \tikzstyle{state}=[minimum width=2cm, font=\boldmath];
+    % First row
+    \node (00) at (0,0) [state] {$(0,0)$};
+    \node (01) at ($(00)+(3,0)$) [state] {$(0,1)$};
+    \node (02) at ($(01)+(3,0)$) [state] {$(0,2)$};
+    \node (03) at ($(02)+(3,0)$) [state] {$(0,3)$};
+    \node (04) at ($(03)+(3,0)$) [state] {$(0,4)$};
+
+    % Second row
+    \node (10) at ($(00)+(0,-3)$) [state] {$(1,0)$};
+    \node (11) at ($(10)+(3,0)$) [state] {$(1,1)$};
+    \node (12) at ($(11)+(3,0)$) [state] {$(1,2)$};
+    \node (13) at ($(12)+(3,0)$) [state] {$(1,3)$};
+    \node (14) at ($(13)+(3,0)$) [state] {$(1,4)$};
+
+    % Third row
+    \node (20) at ($(10)+(0,-3)$) [state] {$(2,0)$};
+    \node (21) at ($(20)+(3,0)$) [state] {$(2,1)$};
+    \node (22) at ($(21)+(3,0)$) [state] {$(2,2)$};
+    \node (23) at ($(22)+(3,0)$) [state] {$(2,3)$};
+    \node (24) at ($(23)+(3,0)$) [state] {$(2,4)$};
+
+    % Fourth row
+    \node (30) at ($(20)+(0,-3)$) [state] {$(3,0)$};
+    \node (31) at ($(30)+(3,0)$) [state] {$(3,1)$};
+    \node (32) at ($(31)+(3,0)$) [state] {$(3,2)$};
+    \node (33) at ($(32)+(3,0)$) [state] {$(3,3)$};
+
+    % Fifth row
+    \node (40) at ($(30)+(0,-3)$) [state] {$(4,0)$};
+    \node (41) at ($(40)+(3,0)$) [state] {$(4,1)$};
+    \node (42) at ($(41)+(3,0)$) [state] {$(4,2)$};
+
+    % Transitions
+    % Arrivals
+    \draw (00) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (10);
+    \draw (01) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (11);
+    \draw (02) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (12);
+    \draw (03) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (13);
+    \draw (04) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (14);
+
+    \draw (10) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (20);
+    \draw (11) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (21);
+    \draw (12) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (22);
+    \draw (13) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (23);
+    \draw (14) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (24);
+
+    \draw (20) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (30);
+    \draw (21) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (31);
+    \draw (22) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (32);
+    \draw (23) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (33);
+
+    \draw (30) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (40);
+    \draw (31) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (41);
+    \draw (32) edge[out=-135,in=135,->,thick] node [left] {\tiny$\Lambda$} (42);
+
+    % First Station Service and exit
+    \draw (00) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p\mu_1$} (10);
+    \draw (01) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p\mu_1$} (11);
+    \draw (02) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p\mu_1$} (12);
+    \draw (03) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p\mu_1$} (13);
+    \draw (04) edge[out=-45,in=45,<-,thick] node [left] {\tiny$0$} (14);
+
+    \draw (10) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p2\mu_1$} (20);
+    \draw (11) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p2\mu_1$} (21);
+    \draw (12) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p2\mu_1$} (22);
+    \draw (13) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p\mu_1$} (23);
+    \draw (14) edge[out=-45,in=45,<-,thick] node [left] {\tiny$0$} (24);
+
+    \draw (20) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p2\mu_1$} (30);
+    \draw (21) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p2\mu_1$} (31);
+    \draw (22) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p2\mu_1$} (32);
+    \draw (23) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p\mu_1$} (33);
+
+    \draw (30) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p2\mu_1$} (40);
+    \draw (31) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p2\mu_1$} (41);
+    \draw (32) edge[out=-45,in=45,<-,thick] node [left] {\tiny$p2\mu_1$} (42);
+
+    % First Station Service and ward
+    \draw (01) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)\mu_1$} (10);
+    \draw (02) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)\mu_1$} (11);
+    \draw (03) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)\mu_1$} (12);
+    \draw (04) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)\mu_1$} (13);
+
+    \draw (11) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)2\mu_1$} (20);
+    \draw (12) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)2\mu_1$} (21);
+    \draw (13) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)2\mu_1$} (22);
+    \draw (14) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)\mu_1$} (23);
+
+    \draw (21) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)2\mu_1$} (30);
+    \draw (22) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)2\mu_1$} (31);
+    \draw (23) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)2\mu_1$} (32);
+    \draw (24) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)\mu_1$}  (33);
+
+    \draw (31) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)2\mu_1$} (40);
+    \draw (32) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)2\mu_1$} (41);
+    \draw (33) edge[out=-135,in=45,<-,thick] node [right, below=.5cm] {\tiny$(1-p)2\mu_1$} (42);
+
+    % Second station services
+    \draw (01) edge[out=-135,in=-45,->,thick] node [below] {\tiny$\mu_2$} (00);
+    \draw (02) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (01);
+    \draw (03) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (02);
+    \draw (04) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (03);
+
+    \draw (11) edge[out=-135,in=-45,->,thick] node [below] {\tiny$\mu_2$}  (10);
+    \draw (12) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (11);
+    \draw (13) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (12);
+    \draw (14) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (13);
+
+    \draw (21) edge[out=-135,in=-45,->,thick] node [below] {\tiny$\mu_2$}  (20);
+    \draw (22) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (21);
+    \draw (23) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (22);
+    \draw (24) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (23);
+
+    \draw (31) edge[out=-135,in=-45,->,thick] node [below] {\tiny$\mu_2$}  (30);
+    \draw (32) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (31);
+    \draw (33) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (32);
+
+    \draw (41) edge[out=-135,in=-45,->,thick] node [below] {\tiny$\mu_2$}  (40);
+    \draw (42) edge[out=-135,in=-45,->,thick] node [below] {\tiny$2\mu_2$} (41);
+
+    % Indicating phases corresponding to blockages
+    \draw [dashed, line width=1mm, red, opacity=.3] ($(03) + (-.5,.5)$) rectangle ($(33) + (4,-.5)$);
+    \node (label) at ($(33) + (1.75,-2)$) [draw=red] {States with blocking: $j>c_2$};
+    \draw [->] (label) -- ($(33) + (1.75,-.5)$);
+
+\end{tikzpicture}

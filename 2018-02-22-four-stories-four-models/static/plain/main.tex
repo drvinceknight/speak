@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+    \begin{tikzpicture}
+        \coordinate (origin) at (0, 0);
+
+        \foreach[count=\i] \dim in {\textbf{Goal:} Proficiency,
+                                    \textbf{Goal:} Growth,
+                                    \textbf{Staff:Student} Ratio,
+                                    \textbf{Class:} Duration,
+                                    \textbf{Intrinsic} Motivation,
+                                    \textbf{Goal:} Breadth,
+                                    \textbf{Goal:} Depth}{
+            \node (title) at (\i * 360 / 7: 11) {\Huge\dim};
+            \draw (origin) -- (title);
+        }
+    \end{tikzpicture}
+\end{document}

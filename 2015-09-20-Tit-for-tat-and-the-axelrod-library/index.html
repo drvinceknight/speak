@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Playing Games with Game Theory</title>
+
+		<meta name="description" content="A talk given at Pembrokshire College">
+		<meta name="author" content="Vince Knight">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="../reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/css/theme/solarized.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+                <section data-markdown>
+                    ### Tit for Tat, Evolution, Game Theory and the Python Axelrod Library
+                    `pip install axelrod`
+
+                    [@drvinceknight](https://twitter.com/drvinceknight)
+
+                    {[github.com](https://github.com/Axelrod-Python/Axelrod),
+                    [gitter.im](https://gitter.im/Axelrod-Python/Axelrod)}/Axelrod-Python/Axelrod
+
+                </section>
+
+
+                    <!-- Optional slide to change theme in case does not work well on given beamer -->
+                    <section id="themes">
+                        <h2>Themes</h2>
+                        <p>
+                            reveal.js comes with a few themes built in: <br>
+                            <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/black.css'); return false;">Black (default)</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/white.css'); return false;">White</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/league.css'); return false;">League</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/sky.css'); return false;">Sky</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/beige.css'); return false;">Beige</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/simple.css'); return false;">Simple</a> <br>
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/serif.css'); return false;">Serif</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/night.css'); return false;">Night</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/moon.css'); return false;">Moon</a> -
+                            <a href="#"
+                                onclick="document.getElementById('theme').setAttribute('href','../reveal.js/css/theme/solarized.css'); return false;">Solarized</a>
+                        </p>
+                    </section>
+				</section>
+
+                <section>
+                        $$\begin{pmatrix}
+                        3,3&0,5\\
+                        5,0&1,1
+                        \end{pmatrix}$$
+                <br>
+                <br>
+                <i class=fragment>'This course has taught me to not trust my classmates.'</i>
+                </section>
+
+
+
+                <section>
+                    <ol>
+                        <li>Robert Axelrod</li>
+                        <li class=fragment>1980a: 14+1 strategies</li>
+                        <li class=fragment>1980b: 64+1 strategies</li>
+                    </ol>
+                </section>
+
+                <section>
+                <p>
+                TODO: Sacrifice a cat
+                </p>
+                </section>
+
+                <section>
+                    <img src="static/outline_of_library.svg" width=1000>
+                </section>
+
+                <section>
+					<pre><code data-trim contenteditable>
+class TitForTat(Player):
+    """A player starts by cooperating and then mimics previous move by opponent."""
+
+    name = 'Tit For Tat'
+    classifier = {
+        'memory_depth': 1,  # Four-Vector = (1.,0.,1.,0.)
+        'stochastic': False,
+        'inspects_source': False,
+        'manipulates_source': False,
+        'manipulates_state': False
+    }
+
+    @staticmethod
+    def strategy(opponent):
+        return 'D' if opponent.history[-1:] == ['D'] else 'C'
+					</code></pre>
+                </section>
+
+                <section>
+					<pre><code data-trim contenteditable>
+class TestTitForTat(TestPlayer):
+
+    name = "Tit For Tat"
+    player = axelrod.TitForTat
+    expected_classifier = {
+        'memory_depth': 1,
+        'stochastic': False,
+        'inspects_source': False,
+        'manipulates_source': False,
+        'manipulates_state': False
+    }
+
+    def test_strategy(self):
+        """Starts by cooperating."""
+        self.first_play_test(C)
+
+    def test_effect_of_strategy(self):
+        """Repeats last action of opponent history."""
+        self.markov_test([C, D, C, D])
+        self.responses_test([C] * 4, [C, C, C, C], [C])
+        self.responses_test([C] * 5, [C, C, C, C, D], [D])
+					</code></pre>
+                </section>
+
+                <section>
+                    <img src="static/axelrod-tweet.png" width=600>
+                </section>
+
+                <section>
+                    <a
+                        href="https://github.com/Axelrod-Python/Axelrod/graphs/contributors"><img
+                        src="static/Contributors.png" width=800></a>
+                </section>
+
+                <section>
+                    <img src="static/tournament.svg" width=800>
+                </section>
+
+                <section>
+                    <img src="static/eco_tournament.svg" width=800>
+                </section>
+
+
+                <section>
+                    <img src="static/tournament_with_cheaters.svg" width=800>
+                </section>
+
+                <section>
+                    <img src="static/eco_tournament_with_cheaters.svg" width=800>
+                </section>
+
+                <section>
+					<pre><code data-trim contenteditable>
+class MindBender(MindWarper):
+    """
+    A player that changes the opponent's strategy by modifying the internal
+    dictionary.
+    """
+
+    name = 'Mind Bender'
+    classifier = {
+        'memory_depth': -10,
+        'stochastic': False,
+        'inspects_source': False,
+        'manipulates_source': True,  # changes what opponent will do
+        'manipulates_state': False
+    }
+
+    @staticmethod
+    def strategy(opponent):
+        opponent.__dict__['strategy'] = lambda opponent: 'C'
+        return 'D'
+					</code></pre>
+                </section>
+
+                <section>
+
+                <p>
+                <a href="http://localhost:8000">DjAxelrod</a>
+                </p>
+                </section>
+
+                <section data-markdown>
+                    Sprint on Monday!
+
+                    `pip install axelrod`
+
+                    {[github.com](https://github.com/Axelrod-Python/Axelrod),
+                    [gitter.im](https://gitter.im/Axelrod-Python/Axelrod)}/Axelrod-Python/Axelrod
+
+                    [Blog posts by
+                    TC](http://www.thomascampbell.me.uk/category/axelrod.html)
+
+                    [demo.ipynb](https://github.com/drvinceknight/Talks/blob/gh-pages/2015-09-20-Tit-for-tat-and-the-axelrod-library/demo.ipynb)
+                </section>
+
+                <section>
+                <iframe width="853" height="480" src="https://www.youtube.com/embed/evnT7wLMgZM?rel=0" frameborder="0" allowfullscreen></iframe>
+                </section>
+		</div>
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../reveal.js/plugin/notes/notes.js', async: true },
+                    { src: '../reveal.js/plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

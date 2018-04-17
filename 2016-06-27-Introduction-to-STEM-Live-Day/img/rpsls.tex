@@ -1,0 +1,30 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+
+\node (R) at (0,0) [circle, minimum width = 2cm, draw, fill=blue!20] {Rock};
+\node (P) at (4,3) [circle, minimum width = 2cm, draw, fill=orange!20] {Paper};
+\node (S) at (8,0) [circle, minimum width = 2cm, draw, fill=green!20] {Scissors};
+\node (Lz) at (2,-3) [circle, minimum width = 2cm, draw, fill=red!20] {Lizard};
+\node (Sp) at (6,-3) [circle, minimum width = 2cm, draw, fill=brown!20] {Spock};
+
+\draw [->, very thick] (P) -- node[above, fill=orange!20, draw, very thick] {Covers} (R);
+\draw [->, very thick] (P) -- node[above, fill=orange!20, draw, very thick] {Disproves} (Sp);
+
+\draw [->, very thick] (R) -- node[below, fill=blue!20, draw, very thick] {Crushes} (S);
+\draw [->, very thick] (R) -- node[above, fill=blue!20, draw, very thick] {Crushes} (Lz);
+
+\draw [->, very thick] (S) -- node[below, fill=green!20, draw, very thick] {Cuts} (P);
+\draw [->, very thick] (S) -- node[above, fill=green!20, draw, very thick] {Decapitates} (Lz);
+
+\draw [->, very thick] (Lz) -- node[above, fill=red!20, draw, very thick] {Eats} (P);
+\draw [->, very thick] (Lz) -- node[above, fill=red!20, draw, very thick] {Poisons} (Sp);
+
+\draw [->, very thick] (Sp) -- node[above, fill=brown!20, draw, very thick] {Vaporises} (R);
+\draw [->, very thick] (Sp) -- node[above, fill=brown!20, draw, very thick] {Smashes} (S);
+\end{tikzpicture}
+
+\end{document}
