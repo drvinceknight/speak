@@ -1,5 +1,6 @@
-import re
+import markdown
 import pathlib
+import re
 
 def get_date(directory_path):
     """
@@ -39,6 +40,35 @@ def find_directories(root="./"):
             title = get_title(p)
             talk_file = get_talk_file(p)
             yield p, date, title, talk_file
+
+def write_directory(path, index_file="main.md",
+                    head=pathlib.Path("./head.html"),
+                    header=pathlib.Path("./header.html"),
+                    footer=pathlib.Path("./footer.html")):
+    """
+    Given a directory with a single markdown file create an `index.html`
+    """
+    path = pathlib.Path(path) / index_file
+    html = markdown.markdown(path.read_text())
+
+    out = head.read_text()
+    out += header.read_text()
+    out +=  """
+<body>
+<div class="page-content">
+<div class="wrap">
+<div class="home">
+"""
+    out += html
+    out += """
+</div>
+</div>
+</div>
+"""
+    out += footer.read_text()
+
+    pathlib.Path("./rider.html").write_text(out)
+
 
 if __name__ == "__main__":
     head = pathlib.Path("./head.html")
@@ -81,3 +111,5 @@ if __name__ == "__main__":
 
     out_path = pathlib.Path("./index.html")
     out_path.write_text(out)
+
+    write_directory(pathlib.Path("./rider"))
