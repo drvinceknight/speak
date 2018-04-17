@@ -56,12 +56,19 @@ if __name__ == "__main__":
 
     directories = sorted(list(find_directories()),
                          key=lambda x: x[1], reverse=True)
+
     for path, date, title, talk_file in directories:
+        if talk_file.suffix == ".link":
+            talk_file = talk_file.read_text()
+            suffix = ".link"
+        else:
+            suffix = talk_file.suffix
+
         out += """<li>
         <span class="post-date">{} [{}]</span>
         <a class="post-link" href="{}">{}</a>
         </li>
-        """.format(date, talk_file.suffix, talk_file, title)
+        """.format(date, suffix, talk_file, title)
 
     out += """
 </ul>
