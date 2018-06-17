@@ -36,7 +36,7 @@
 
     \begin{frame}
         \begin{center}
-            \Huge  
+            \Huge
                 Reproducible Science
                 Reinforcement Learning
                 Evolution
@@ -46,6 +46,11 @@
             \Large
                Vince: \href{https://twitter.com/drvinceknight}{@drvinceknight}\\
         \end{center}
+
+        % Thank you very much ...  My name is Vince Knight and it's a true pleasure
+        % to be speaking here today. Thank you to Marc Harper for the
+        % invitation. I'll be speaking to you today about 3 topics that are
+        % linked.
     \end{frame}
 
     \begin{frame}
@@ -70,6 +75,18 @@
                        \end{center}
                    \end{column}
                \end{columns}
+
+        % Notes I am an associate professor at Cardiff University's School of
+        % Mathematics where I teach game theory and computer programming.
+        % It's the job I wanted all my life and I'm super lucky to get to
+        % teach things I'm passionate about.  I am also a fellow of the
+        % Sustainable Software Institute: I'll
+        % speak more about this institute at the correct time.  I am also one of
+        % the core developers of a Python library called the Axelrod
+        % project and again: I'll speak about that at the relevant time
+        % in this talk.  Finally, [click], in my free time I like to
+        % throw plastic around for my dog: this is not at all relevant to
+        % this talk.
     \end{frame}
 
     \begin{frame}
@@ -77,12 +94,13 @@
             \fontsize{60}{70}\selectfont \(> 70\%\)
         \end{center}
 
-        % Discuss this study in Nature that claims that >70% of scientific
-        % studies are not reproducible
+        % Notes A recent study that appeared in Nature highlighted that 70% of
+        % research are not reproducible
         % https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970
-        % Discuss how this is field dependent of course and that in some cases
-        % (for example in wet sciences) this is because details like how to or
-        % whether to shake a jar of solution is included.
+        % This takes in to account a major range of scientific disciplines and
+        % for example at times is because specific minor details are not
+        % included in reports: whether or not to shake a particular jar of
+        % solution for example is an easily omitted detail.
     \end{frame}
 
     \begin{frame}
@@ -96,9 +114,28 @@
             \end{bmatrix}
         \]
 
-        % Discuss ASMs: and what a mathematical proof is. Relate this to
-        % "instructions". How mathematics as a  "science" is all about
-        % reproducibility.
+        % I mentioned I was a mathematician: in fact the matrix you see on the
+        % screen here is what I studied: does any happen to know what they are?
+        % [Give chance to see if anyone happens to know...] Alternating sign
+        % matrices: an interesting mathematical object in their own right and if
+        % you're interested in a story of how science can benefit from cross
+        % discipline collaboration it's a fantastic one.
+        %
+        % My PhD involved writing a number of mathematical proofs. In some sense
+        % WE (as a subject) could believe that reproducibility of research is a
+        % problem for those other sciences: where you need to know how to mix a
+        % jar of solution for example. Science is essentially about
+        % communicating instructions. There was one proof in my PhD, not a major
+        % one, it was 4 pages long when I took it to my supervisor (a brilliant
+        % mathematician). We worked on it together and reduced it to 2 pages.
+        % Just before submitting I thought I managed to get it down to a couple
+        % of paragraphs.  My external, read those couple of paragraphs and
+        % attempted to "reproduce the science" which in mathematics is
+        % essentially just checking that the proof is correct. He immediately
+        % found that my couple of paragraphs was missing a number of important
+        % details. I was able to immediately recall the 2 page proof and that
+        % was a simple fix to my thesis.  This was science at work and in
+        % general perhaps mathematics does not suffer from this as a problem.
     \end{frame}
 
     \begin{frame}
@@ -115,32 +152,58 @@
             \fontsize{60}{70}\selectfont \(> 70\%\)
         \end{center}
 
-        % Discuss the study by the SSI highlighting that 70% of research uses
-        % software at some stage or another.
+        % In TODO FIND DATE
+        % The Sustinable Software Institute carried out a study that reported
+        % that 70% of research uses software at some stage or another.
+        % Going back to the important of whether or not to mix a solution a
+        % particular way that is a number of points of failure in the scientific
+        % process.
+
+        % I'm not sure if you have seen the headline study that recently claimed
+        % that  significant number of cancer research could be wrong: this was
+        % due to the common use of spreadsheets which transformed/reformatted
+        % data because it thought it was dates.
     \end{frame}
 
     \begin{frame}
         \begin{center}
             \href{https://twitter.com/ianholmes/status/288689712636493824?lang=en}{\includegraphics[width=.7\textwidth]{\assetsfolder/please-download-the-postdoc-tweet.png}}
         \end{center}
+
+        % Simply "putting code up" is sadly not a solution. Even though at times
+        % it's progress.
     \end{frame}
 
     \begin{frame}
         \begin{center}
             \href{https://twitter.com/betatim/status/1004077975233552385}{\includegraphics[width=.7\textwidth]{\assetsfolder/ms-github-importance-of-archiving-tweet.png}}
         \end{center}
+        % The recent MS + Github saw a number of hot takes. This one in
+        % particular I thought was quite good. The problem associated with "just
+        % putting your code up" isn't as simple as being able to run it and/or
+        % understand it. There are fundamental problems associated to making
+        % sure that software is actually there! And that it was/is the software
+        % that was actually used to do the research.
     \end{frame}
 
     \begin{frame}
         \begin{center}
             \href{https://twitter.com/JamesCampbell95/status/996419422951825410}{\includegraphics[width=.7\textwidth]{\assetsfolder/blockchain-instead-of-archiving-tweet.png}}
         \end{center}
+
+        % There are some great technological solutions: this tweet from a PhD
+        % student at Cardiff is 1/4 describing a paper that uses blockhain to
+        % ensure archival of all materials.
     \end{frame}
 
     \begin{frame}
         \begin{center}
             \href{https://twitter.com/legogradstudent/status/979776951517876225}{\includegraphics[width=.7\textwidth]{\assetsfolder/just-use-git-tweet.png}}
         \end{center}
+
+        % This is a slightly worse to this: tooling is not the only solution
+        % (to be clear: this is not a blockchain talk)
+        % Just telling people to use tools is not sufficient.
     \end{frame}
 
 	\begin{frame}
@@ -158,6 +221,9 @@
 				\draw [very thick] (4, 5.5)  -- (culture);
 			\end{tikzpicture}
 		\end{center}
+
+        % We need to talk about balancing technology with culture. There are a
+        % number of things happening in that sense.
 	\end{frame}
 
 	\begin{frame}
@@ -166,6 +232,24 @@
 
 			\url{https://www.software.ac.uk/}
 	   \end{center}
+
+       % The Sustainable Software Institute, is an organisation in the UK that
+       % is funded by one of the main research funders and aims to promote
+       % better practice in research.
+
+       % One of the many things they do is run a fellowship programme: every
+       % year a number of individuals are selected (in quite a competitive
+       % environment) to be (lifelong) fellows with goals to spread best
+       % practice. For example a PhD student of mine is using his fellowship to
+       % give talks and produce learning resources in Welsh (Wales is a bi
+       % lingual country).
+
+       % As well as this, the SSI, run a yearly workshop (an unconference) which
+       % brings together people from a number of academic fields to discuss and
+       % improve the landscape of software in research.
+       % Some examples that directly come out of this workshop include `recipy`
+       % a Python library that automatically builds up a database of what code
+       % ran to produce every output.
 	\end{frame}
 
 	\begin{frame}
@@ -174,7 +258,13 @@
 
 			\url{http://rse.ac.uk/}
 	   \end{center}
-	\end{frame}
+
+       % Another output is the notion of a research software engineer. They're
+       % adamant that anyone who write code and does research is an rse but
+       % we're seeing a number of groups arise around the world: with scientists
+       % whose role it is to contribute (through writing of software) to the
+       % research being done.
+    \end{frame}
 
 	\begin{frame}
 	   \begin{center}
@@ -182,6 +272,11 @@
 
 			\url{https://carpentries.org/}
 	   \end{center}
+
+       % The problem is of course subtle, some of you might have heard of
+       % Software carpentry. The carpentries encompasses that as well as what
+       % was called the library carpentries. These are a collection of workshops
+       % that aim to introduce researchers to the why and how of best practice.
 	\end{frame}
 
 	\begin{frame}
@@ -190,6 +285,14 @@
 
 			\url{http://joss.theoj.org/}
 	   \end{center}
+
+       % We have to ask ourselves what is one of the main reasons for poor
+       % practice. I believe, in part because it's good enough. Most
+       % promotion/tenure like procedures do not (YET) recognise software.
+       % There is ongoing work to recognise software as a research contribution.
+       % For example JOSS: a completely open journal. These are short papers
+       % that, usually if a piece of code has been written correctly (tested,
+       % documented, etc), take very little effort to write.
 	\end{frame}
 
 	\begin{frame}
@@ -197,6 +300,9 @@
 		\begin{center}
 			\textit {For example...}
 		\end{center}
+
+        % I'm going to give an example of some of the things I've spoken about
+        % here.
 	\end{frame}
 
 	\begin{frame}
@@ -208,6 +314,22 @@
 			\includegraphics[width=.35\textwidth]
 			{\assetsfolder/lizard-cooperation.jpg}
 		\end{center}
+
+        % This is a tweet I specifically liked. The idea going on here (I
+        % believe), is that we want to study if a specific Lizard is going to
+        % dominate another. Perhaps this gets correlated to some genetic marker
+        % or even prior behaviour.
+
+        % The reason I like this tweet, is that it is a nice illustration of
+        % game theory. Game theory is the study of outcomes based on behaviour
+        % in rule based systems. So for example: the lizard that was not fed is
+        % more likely to fight and win the warm part of the coop perhaps?
+
+        % [CLICK] Here is the output
+
+        % And the reason this tweet is cool is because it evidences the need for
+        % the subject: sometimes out of simple systems we do not get the
+        % behaviour we expect. Indeed, here cooperative behaviour has emerged.
 
 	\end{frame}
 
@@ -221,6 +343,14 @@
 				\end{pmatrix}
 			\)
 		\end{center}
+
+        % A well used game (set of rules) is the Prisoners Dilemma. You might
+        % have heard of this game before, the general concept is that you have
+        % the option to cooperate or defect when encountering someone else.
+        % Cooperation is essentially the selfish action: giving a bit to ensure
+        % the individual you encounter gains more. Defection on the other hand
+        % is the selfish action: take whatever you can.
+        % When both cooperate it's good for both (for example the lizards).
 	\end{frame}
 
 	\begin{frame}[fragile]{}
@@ -255,20 +385,27 @@
 				\end{minted}
 			\end{column}
 		\end{columns}
+
+        % A lot of work was done on this subject, dating back to a tournament
+        % by Robert Axelrod. He invited individuals to submit code that played
+        % this tournament. 1 specific strategy came out on top: TfT.
+
+        % [CLICK]
+
+        % You can see some examples here, this is using a Python library
+        % Axelrod. The library allows us to run tournaments, Moran processes and
+        % a number of other things.
 \end{frame}
-
-	\begin{frame}
-	\Huge
-		\begin{center}
-		TODO: Sacrifice kitten.
-		\end{center}
-	\end{frame}
-
 
     \begin{frame}
         \begin{center}
             \includegraphics[width=.7\textwidth]{\assetsfolder/axelrod-tweet.png}
         \end{center}
+
+        % This was when the library was announced. A small little tweet and
+        % (quite a popular post on G+ actually) that amongst other things
+        % brought quite a few contributors. At present the library has 200
+        % stars on github.
     \end{frame}
 
     \begin{frame}
@@ -293,6 +430,9 @@
       RETURN
       END
         \end{minted}
+
+        % Here is what some of the original code: this is Tit For Tat. Written
+        % in Fortran.
 \end{frame}
 
 \begin{frame}[fragile]{}
@@ -304,42 +444,46 @@ import axelrod_fortran
             \end{minted}
         \end{minipage}
     \end{center}
-\end{frame}
 
-    \begin{frame}
-        \begin{center}
-            \scalebox{.8}{
-                \input{\revisitresearchfolder/assets/strategy_diagram.tex}
-            }
-        \end{center}
-    \end{frame}
+    % One of the liraries in the project is a Python library that wraps the
+    % original code. Contributions are regularly coming in that implement these
+    % strategies in Python but the wrapper, first of all allows us to check that
+    % they are correct and secondly really allows us to run Robert Axelrod's
+    % original tournaments!
+\end{frame}
 
     \begin{frame}
         \begin{center}
             \includegraphics[width=.9\textwidth]{\revisitresearchfolder/assets/original_tournament_rankings_all_approaches.pdf}
         \end{center}
+
+        % But even with the code: it is difficult to reproduce the work. This is
+        % a number of different ways of computing the results and they do not
+        % all match. There could be a number of reasons for this, slightly
+        % different compilers: not the EXACT same code. The main conclusions
+        % though: do match up. The simple strategy Tit For Tat wins.
     \end{frame}
 
     \begin{frame}
         \begin{center}
             \includegraphics[width=.9\textwidth]{\revisitresearchfolder/assets/original_tournament_with_extra_strategy_ranks_vs_library_ranks.pdf}
         \end{center}
+
+        % The library has had a number of strategies contributed. We can
+        % investigate if one would have changed the results and impressively:
+        % no! Tit For Tat still wins.
     \end{frame}
 
     \begin{frame}
         \begin{center}
             \includegraphics[width=.7\textwidth]{\revisitresearchfolder/assets/full_tournament_pairwise_cooperation_rates.pdf}
         \end{center}
-    \end{frame}
 
-    \begin{frame}
-        \begin{center}
-            \textbf{Resistance}
-            \includegraphics[height=.4\textheight]{\assetsfolder/moran_process_resistance.pdf}\\
-
-            \textbf{Invasion}
-            \includegraphics[height=.4\textheight]{\assetsfolder/moran_process_invasion.pdf}
-        \end{center}
+        % However if we run a tournament with all available strategies (the size
+        % is too big here) then Tit for Tat no longer wins. The tournament is
+        % won by much more complex strategies and what this plot shows here is,
+        % is that they all cooperate with each other and/or don't with the lower
+        % ranking strategies.
     \end{frame}
 
 
@@ -347,6 +491,10 @@ import axelrod_fortran
         \scalebox{.7}{
             \input{\mlresearchfolder/assets/fsm.tex}
         }
+
+        % One such strategy looks like this: it is called a finite state machine
+        % It's just a simple mathematical structure and structures can be
+        % trained.
     \end{frame}
 
 \begin{frame}[fragile]{}
@@ -358,6 +506,11 @@ import axelrod_dojo
             \end{minted}
         \end{minipage}
     \end{center}
+
+    % Here's another sub project: it's built to allow for training of strategies
+    % with reinforcement learning. A number of algorithms are available and in
+    % particular they allow us to train structured strategies of the above type
+    % by getting them to play in specific environments and then self improve.
 \end{frame}
 
 
@@ -367,6 +520,11 @@ import axelrod_dojo
                 \input{\moranresearchfolder/tex/fsm_one.tex}
             }
         \end{center}
+
+        % This is a particular such strategy. It's actually trained for
+        % something a bit more specific than a tournament but to actually
+        % survive in an evolutionary context. The process chose is called a
+        % Moran process. Individual bump in to each other and play.
     \end{frame}
 
 
@@ -380,6 +538,11 @@ import axelrod_dojo
             \flushright{Image made by \url{http://www.freepik.com} from
             \url{https://www.flaticon.com} is licensed by CC BY 3.0}
         \end{center}
+
+        % A piece of work that we have doe is to essentially carry out Axelrod's
+        % tournament but instead of matches: use Moran process. This allows us
+        % to investigate strategies/behaviour that would either be good at
+        % resisting change or causing change.
     \end{frame}
 
 
@@ -390,6 +553,10 @@ import axelrod_dojo
 
             \input{\moranresearchfolder/tex/summary_top_14_invade.tex}
         \end{center}
+
+        % Here is the strategies that were best suited to invading groups of
+        % others. We see that all the ones that do well are ones that have been
+        % trained.
     \end{frame}
 
     \begin{frame}
@@ -399,13 +566,11 @@ import axelrod_dojo
 
             \input{\moranresearchfolder/tex/summary_top_14_resist.tex}
         \end{center}
-    \end{frame}
 
-
-    \begin{frame}
-        \begin{center}
-            \includegraphics[width=.9\textwidth]{\assetsfolder/tf1_transitive_fingerprint.pdf}
-        \end{center}
+        % Here are the resistors. Again, you that TF* (which stands for trained
+        % finite) do well. These are strategies that are specifically trained in
+        % Moran environments (the previous ones were just trained to score
+        % highly against opponents).
     \end{frame}
 
     \begin{frame}
@@ -436,6 +601,18 @@ import axelrod_dojo
                 \end{tabular}
             \end{column}
         \end{columns}
+
+        % Let us take a close look at TF1: when playing against itself we see
+        % that it'll have this 3 turn handshake.
+        % Importantly this was not trained: this is the output of an
+        % evolutionary process.
+
+        % So, going back to Axelrod's original work, we see that TfT was almost
+        % certainly not sufficiently sophisticated but one in the simple
+        % environment. It has a very naive self recognition mechanism (it in
+        % essence self recognises a number of strategies) but what this
+        % extension of the work allows us to do is show that it is probably that
+        % strong vectors of spread of behaviour are self recognition mechanisms.
     \end{frame}
 
 
@@ -446,9 +623,15 @@ import axelrod_dojo
                 164
                 }
             \only<2>{
-                \sout{164}\; 211+
+                \sout{164}\; 213+
                 }
         \end{center}
+
+        % This training is only possible because of the very diverse training
+        % potential. At the time of doing that work, we had 164 strategies,
+        % right now we have had over 200. The really nice thing about this is
+        % that this is completely open work and a lot of contributions to the
+        % work are not by academics but by a wide diversity of areas.
     \end{frame}
 
 
