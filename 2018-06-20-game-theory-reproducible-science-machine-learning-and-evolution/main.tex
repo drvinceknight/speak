@@ -152,7 +152,7 @@
             \fontsize{60}{70}\selectfont \(> 70\%\)
         \end{center}
 
-        % In TODO FIND DATE
+        % https://www.software.ac.uk/blog/2014-12-04-its-impossible-conduct-research-without-software-say-7-out-10-uk-researchers
         % The Sustinable Software Institute carried out a study that reported
         % that 70% of research uses software at some stage or another.
         % Going back to the important of whether or not to mix a solution a
@@ -275,8 +275,9 @@
 
        % The problem is of course subtle, some of you might have heard of
        % Software carpentry. The carpentries encompasses that as well as what
-       % was called the library carpentries. These are a collection of workshops
-       % that aim to introduce researchers to the why and how of best practice.
+       % was called the library and data carpentries. These are a collection of
+	   % workshops  that aim to introduce researchers to the why and how of best
+	   % practice.
 	\end{frame}
 
 	\begin{frame}
@@ -454,7 +455,7 @@ import axelrod_fortran
 
     \begin{frame}
         \begin{center}
-            \includegraphics[width=.9\textwidth]{\revisitresearchfolder/assets/original_tournament_rankings_all_approaches.pdf}
+            \includegraphics[width=\textwidth]{\revisitresearchfolder/assets/original_tournament_rankings_all_approaches.pdf}
         \end{center}
 
         % But even with the code: it is difficult to reproduce the work. This is
@@ -466,7 +467,7 @@ import axelrod_fortran
 
     \begin{frame}
         \begin{center}
-            \includegraphics[width=.9\textwidth]{\revisitresearchfolder/assets/original_tournament_with_extra_strategy_ranks_vs_library_ranks.pdf}
+            \includegraphics[width=\textwidth]{\revisitresearchfolder/assets/original_tournament_with_extra_strategy_ranks_vs_library_ranks.pdf}
         \end{center}
 
         % The library has had a number of strategies contributed. We can
@@ -486,16 +487,64 @@ import axelrod_fortran
         % ranking strategies.
     \end{frame}
 
+    \begin{frame}
+        \begin{center}
+            \Large Lookerup
+
+            \vfill
+            \normalsize
+
+            \scalebox{.8}{
+                \input{\mlresearchfolder/assets/lookerup.tex}
+            }
+        \end{center}
+
+        % The strategies that win are of a number of specific forms: this is a
+        % lookerup.
+    \end{frame}
 
     \begin{frame}
-        \scalebox{.7}{
-            \input{\mlresearchfolder/assets/fsm.tex}
-        }
+        \begin{center}
+            \Large Gambler
+
+            \vfill
+            \normalsize
+
+            \scalebox{.8}{
+                \input{\mlresearchfolder/assets/gambler.tex}
+            }
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+        \begin{center}
+            \Large Neural network
+
+            \vfill
+            \normalsize
+
+            \scalebox{.7}{
+                \input{\mlresearchfolder/assets/ann.tex}
+            }
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+        \begin{center}
+            \Large Finite State Machine
+
+            \vfill
+            \normalsize
+
+            \scalebox{.7}{
+                \input{\mlresearchfolder/assets/fsm.tex}
+            }
+        \end{center}
+    \end{frame}
 
         % One such strategy looks like this: it is called a finite state machine
         % It's just a simple mathematical structure and structures can be
         % trained.
-    \end{frame}
 
 \begin{frame}[fragile]{}
 
@@ -527,22 +576,27 @@ import axelrod_dojo
         % Moran process. Individual bump in to each other and play.
     \end{frame}
 
-
     \begin{frame}
         \begin{center}
+            \scalebox{.6}{\input{\moranresearchfolder/tex/moran_process.tex}}
+        \end{center}
+        % We are now going to discuss something ever so slightly different.
+        % What we have here is a particular game theoretic process called a
+        % Moran process. In this case we don't just look at everyones score but
+        % at how a population evolves based on everyones score. Think of it as a
+        % way of modelling how people use operating systems. The use of a
+        % particular OS is better if there are more people you know who use it.
+        % [EXPLAIN THE PROCESS]
+    \end{frame}
+
+	\begin{frame}
+        \begin{center}
             \includegraphics[height=.8\textheight]{./assets/hunger-games-hand-gesture.eps}
-
-
             \tiny
             \vfill
             \flushright{Image made by \url{http://www.freepik.com} from
             \url{https://www.flaticon.com} is licensed by CC BY 3.0}
         \end{center}
-
-        % A piece of work that we have doe is to essentially carry out Axelrod's
-        % tournament but instead of matches: use Moran process. This allows us
-        % to investigate strategies/behaviour that would either be good at
-        % resisting change or causing change.
     \end{frame}
 
 
