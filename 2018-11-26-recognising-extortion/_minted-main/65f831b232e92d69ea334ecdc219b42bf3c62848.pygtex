@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{k+kn}{import} \PYG{n+nn}{axelrod} \PYG{k+kn}{as} \PYG{n+nn}{axl}
+
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{players} \PYG{o}{=} \PYG{p}{(}\PYG{n}{axl}\PYG{o}{.}\PYG{n}{TitForTat}\PYG{p}{(),}
+\PYG{o}{...}            \PYG{n}{axl}\PYG{o}{.}\PYG{n}{Cooperator}\PYG{p}{())}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{axl}\PYG{o}{.}\PYG{n}{Match}\PYG{p}{(}\PYG{n}{players}\PYG{p}{,} \PYG{n}{turns}\PYG{o}{=}\PYG{l+m+mi}{5}\PYG{p}{)}\PYG{o}{.}\PYG{n}{play}\PYG{p}{()}
+\PYG{p}{[(}\PYG{n}{C}\PYG{p}{,} \PYG{n}{C}\PYG{p}{),} \PYG{p}{(}\PYG{n}{C}\PYG{p}{,} \PYG{n}{C}\PYG{p}{),} \PYG{p}{(}\PYG{n}{C}\PYG{p}{,} \PYG{n}{C}\PYG{p}{),} \PYG{p}{(}\PYG{n}{C}\PYG{p}{,} \PYG{n}{C}\PYG{p}{),} \PYG{p}{(}\PYG{n}{C}\PYG{p}{,} \PYG{n}{C}\PYG{p}{)]}
+
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{players} \PYG{o}{=} \PYG{p}{(}\PYG{n}{axl}\PYG{o}{.}\PYG{n}{TitForTat}\PYG{p}{(),}
+\PYG{o}{...}            \PYG{n}{axl}\PYG{o}{.}\PYG{n}{Defector}\PYG{p}{())}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{axl}\PYG{o}{.}\PYG{n}{Match}\PYG{p}{(}\PYG{n}{players}\PYG{p}{,} \PYG{n}{turns}\PYG{o}{=}\PYG{l+m+mi}{5}\PYG{p}{)}\PYG{o}{.}\PYG{n}{play}\PYG{p}{()}
+\PYG{p}{[(}\PYG{n}{C}\PYG{p}{,} \PYG{n}{D}\PYG{p}{),} \PYG{p}{(}\PYG{n}{D}\PYG{p}{,} \PYG{n}{D}\PYG{p}{),} \PYG{p}{(}\PYG{n}{D}\PYG{p}{,} \PYG{n}{D}\PYG{p}{),} \PYG{p}{(}\PYG{n}{D}\PYG{p}{,} \PYG{n}{D}\PYG{p}{),} \PYG{p}{(}\PYG{n}{D}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)]}
+
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{players} \PYG{o}{=} \PYG{p}{(}\PYG{n}{axl}\PYG{o}{.}\PYG{n}{TitForTat}\PYG{p}{(),}
+\PYG{o}{...}            \PYG{n}{axl}\PYG{o}{.}\PYG{n}{Alternator}\PYG{p}{())}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{axl}\PYG{o}{.}\PYG{n}{Match}\PYG{p}{(}\PYG{n}{players}\PYG{p}{,} \PYG{n}{turns}\PYG{o}{=}\PYG{l+m+mi}{5}\PYG{p}{)}\PYG{o}{.}\PYG{n}{play}\PYG{p}{()}
+\PYG{p}{[(}\PYG{n}{C}\PYG{p}{,} \PYG{n}{C}\PYG{p}{),} \PYG{p}{(}\PYG{n}{C}\PYG{p}{,} \PYG{n}{D}\PYG{p}{),} \PYG{p}{(}\PYG{n}{D}\PYG{p}{,} \PYG{n}{C}\PYG{p}{),} \PYG{p}{(}\PYG{n}{C}\PYG{p}{,} \PYG{n}{D}\PYG{p}{),} \PYG{p}{(}\PYG{n}{D}\PYG{p}{,} \PYG{n}{C}\PYG{p}{)]}
+\end{Verbatim}
