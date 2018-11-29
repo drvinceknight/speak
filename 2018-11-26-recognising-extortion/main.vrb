@@ -1,0 +1,9 @@
+\frametitle{}
+
+    \begin{center}
+        \begin{minipage}{0.8\textwidth}
+            \begin{minted}[fontsize=\Huge]{python}
+import axelrod_dojo
+            \end{minted}
+        \end{minipage}
+    \end{center}
