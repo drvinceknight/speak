@@ -1,0 +1,246 @@
+\documentclass{beamer}
+
+\usecolortheme[light]{solarized}
+
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{hyperref}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{moresize}
+\usepackage{standalone}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage[normalem]{ulem}
+\usepackage{xpatch}
+
+\xpatchcmd{\sout}
+  {\bgroup}
+    {\bgroup\def\ULthickness{2pt}}
+      {}{}
+
+\usetikzlibrary{calc, patterns}
+
+\definecolor{twitter}{RGB}{64, 153, 255}
+\definecolor{github}{RGB}{211, 211, 211}
+
+\newcommand{\assetsfolder}{./assets}
+\newcommand{\researchfolder}{$HOME/rsc/axelrod-moran}
+\newcommand{\mlresearchfolder}{$HOME/rsc/ml-paper}
+\newcommand{\sseresearchfolder}{$HOME/rsc/testing_for_ZD}
+
+\begin{document}
+
+    \begin{frame}
+        \begin{center}
+            \Large
+            \url{www.bbc.co.uk/sport/football/46202509}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+        \begin{center}
+            \begin{tcolorbox}[colback=twitter,colframe=twitter!40!black,title=
+                    \href{https://twitter.com/kirstyjean/status/870415613746962432}
+                    {@kirstyjean} (2 Jun 2017):
+]
+                    Me: sets up flawless heat competition trial, lizards will
+                    fight over hot podium, there can only be one winner!
+
+                    Lizards:
+
+                    \#ALlizards2017
+           \end{tcolorbox}
+        \end{center}
+        \begin{center}
+            \pause
+            \includegraphics[width=.4\textwidth]
+            {\assetsfolder/lizard-cooperation.jpg}
+        \end{center}
+
+    \end{frame}
+
+    \begin{frame}
+        \Huge
+        Golden Balls
+    \end{frame}
+
+    \begin{frame}
+        % PD
+        \Huge
+        \[
+            \begin{pmatrix}
+                3 & 0\\
+                5 & 1
+            \end{pmatrix}
+            \qquad
+            \begin{pmatrix}
+                3 & 5\\
+                0 & 1
+            \end{pmatrix}
+        \]
+    \end{frame}
+
+
+    \begin{frame}[fragile]{}
+        \begin{columns}
+            \begin{column}{.4\textwidth}
+                \begin{center}
+                    \includegraphics[width=.8\textwidth]{\assetsfolder/Axelrod.jpg}
+                    \\
+                    Robert Axelrod
+                \end{center}
+            \end{column}
+            \pause
+            \begin{column}{.6\textwidth}
+                \begin{minted}[fontsize=\scriptsize]{python}
+>>> import axelrod as axl
+
+>>> players = (axl.TitForTat(),
+...            axl.Cooperator())
+>>> axl.Match(players, turns=5).play()
+[(C, C), (C, C), (C, C), (C, C), (C, C)]
+
+>>> players = (axl.TitForTat(),
+...            axl.Defector())
+>>> axl.Match(players, turns=5).play()
+[(C, D), (D, D), (D, D), (D, D), (D, D)]
+
+>>> players = (axl.TitForTat(),
+...            axl.Alternator())
+>>> axl.Match(players, turns=5).play()
+[(C, C), (C, D), (D, C), (C, D), (D, C)]
+
+                \end{minted}
+            \end{column}
+        \end{columns}
+\end{frame}
+
+    \begin{frame}
+        \begin{center}
+            \large
+            \url{github.com/Axelrod-Python/Axelrod/pull/1136}
+        \end{center}
+    \end{frame}
+
+\begin{frame}
+    \begin{center}
+    \scalebox{.7}{
+        \input{\mlresearchfolder/assets/lookerup.tex}
+    }
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \scalebox{.7}{
+        \input{\mlresearchfolder/assets/hmm.tex}
+    }
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \scalebox{.7}{
+        \input{\mlresearchfolder/assets/ann.tex}
+    }
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \scalebox{.7}{
+        \input{\mlresearchfolder/assets/fsm.tex}
+    }
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{../2017-02-23-Rock-Paper-Scissors-Lizard-Spock-With-Python/static/genetic_algorithm.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \scalebox{.7}{
+            \input{\researchfolder/tex/fsm_one.tex}
+        }
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{columns}
+        \begin{column}{.6\textwidth}
+            \begin{center}
+                \scalebox{.49}{
+                    \input{\researchfolder/tex/fsm_one.tex}
+                }
+            \end{center}
+        \end{column}
+
+        \begin{column}{.4\textwidth}
+            \small
+            \begin{tabular}{ll}
+                \toprule
+                TF1 \#1   & TF1 \#2\\
+                \midrule
+                \bf{1}: C & \bf{1}: C  \\
+                \bf{8}: C & \bf{8}: C  \\
+                \bf{5}: D & \bf{5}: D  \\
+                4: C      & 4: C  \\
+                4: C      & 4: C  \\
+                4: C      & 4: C  \\
+                4: C      & 4: C  \\
+                4: C      & 4: C  \\
+                \bottomrule
+            \end{tabular}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \Huge Me
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{assets/high-school.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{assets/graduation.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{assets/phd.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{assets/postdoc.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{assets/pycon.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{assets/flyingdog.jpg}
+    \end{center}
+\end{frame}
+
+\end{document}
