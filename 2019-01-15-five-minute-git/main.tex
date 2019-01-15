@@ -1,0 +1,159 @@
+\documentclass{beamer}
+
+\usecolortheme[light]{solarized}
+
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{hyperref}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{moresize}
+\usepackage{standalone}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage[normalem]{ulem}
+\usepackage{xpatch}
+
+\xpatchcmd{\sout}
+  {\bgroup}
+    {\bgroup\def\ULthickness{2pt}}
+      {}{}
+
+\usetikzlibrary{calc, patterns}
+\begin{document}
+
+% Prep: open up a terminal
+% Side display next to a file explorer.
+
+\begin{frame}
+    \begin{center}
+        \Huge
+        \texttt{git} \pause in 5 minutes.
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\Huge]{bash}
+$ mkdir project
+$ cd project
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\Huge]{bash}
+$ git init
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\Huge]{bash}
+$ git status
+    \end{minted}
+\end{frame}
+
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\Huge]{bash}
+$ echo "This is a five minute git overview" > README.md
+$ git add README.md
+$ git status
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\Huge]{bash}
+$ git commit
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\Large]{bash}
+$ cd ..
+$ git clone project another-copy-of-project
+$ cd another-copy-of-project
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\huge]{bash}
+$ git branch
+$ git branch new_feature
+$ git checkout new_feature
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\huge]{bash}
+$ echo "\begin{document}" > main.tex
+$ git add main.tex
+$ git commit
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\huge]{bash}
+$ git remote -v
+$ git push origin add_new_feature
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\huge]{bash}
+$ cd ../project
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\huge]{bash}
+$ cd ../project
+$ echo "This is a paper that... >> README.md
+$ git add README.md
+$ git commit
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\huge]{bash}
+$ git merge add_new_feature
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{minted}[fontsize=\huge]{bash}
+$ rm main.tex
+$ git log
+$ git reset --hard <hash>
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{center}
+        \Large
+        \url{gist.github.com/jaseemabid/1321592}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \Large
+    \begin{center}
+    Write good commit messages
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \Large
+    \begin{center}
+    Try \url{https://jonas.github.io/tig/}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \Huge
+    \begin{center}
+    \texttt{git} history
+    \end{center}
+\end{frame}
+
+\end{document}
