@@ -55,7 +55,7 @@ $ git status
 
 
 \begin{frame}[fragile]{}
-    \begin{minted}[fontsize=\Huge]{bash}
+    \begin{minted}{bash}
 $ echo "This is a five minute git overview" > README.md
 $ git add README.md
 $ git status
@@ -85,7 +85,7 @@ $ git checkout new_feature
 \end{frame}
 
 \begin{frame}[fragile]{}
-    \begin{minted}[fontsize=\huge]{bash}
+    \begin{minted}[fontsize=\large]{bash}
 $ echo "\begin{document}" > main.tex
 $ git add main.tex
 $ git commit
@@ -93,7 +93,7 @@ $ git commit
 \end{frame}
 
 \begin{frame}[fragile]{}
-    \begin{minted}[fontsize=\huge]{bash}
+    \begin{minted}[fontsize=\large]{bash}
 $ git remote -v
 $ git push origin add_new_feature
     \end{minted}
@@ -106,9 +106,9 @@ $ cd ../project
 \end{frame}
 
 \begin{frame}[fragile]{}
-    \begin{minted}[fontsize=\huge]{bash}
+    \begin{minted}[fontsize=\large]{bash}
 $ cd ../project
-$ echo "This is a paper that... >> README.md
+$ echo "This is a paper that..." >> README.md
 $ git add README.md
 $ git commit
     \end{minted}
@@ -124,7 +124,7 @@ $ git merge add_new_feature
     \begin{minted}[fontsize=\huge]{bash}
 $ rm main.tex
 $ git log
-$ git reset --hard <hash>
+$ git reset --hard HEAD
     \end{minted}
 \end{frame}
 
