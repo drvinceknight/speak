@@ -88,11 +88,14 @@ if __name__ == "__main__":
                          key=lambda x: x[1], reverse=True)
 
     for path, date, title, talk_file in directories:
-        if talk_file.suffix == ".link":
-            talk_file = talk_file.read_text()
-            suffix = ".link"
-        else:
-            suffix = talk_file.suffix
+        try:
+            if talk_file.suffix == ".link":
+                talk_file = talk_file.read_text()
+                suffix = ".link"
+            else:
+                suffix = talk_file.suffix
+        except AttributeError:
+            print(f"Error with {path}")
 
         out += """<li>
         <span class="post-date">{} [{}]</span>
