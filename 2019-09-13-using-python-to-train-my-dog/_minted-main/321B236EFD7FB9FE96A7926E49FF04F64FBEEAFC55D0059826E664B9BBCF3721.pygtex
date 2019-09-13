@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{urlpatterns} \PYG{o}{=} \PYG{p}{[}
+    \PYG{n}{path}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}behaviours/\PYGZsq{}}\PYG{p}{,} \PYG{n}{views}\PYG{o}{.}\PYG{n}{behaviour\PYGZus{}list}\PYG{p}{),}
+    \PYG{n}{path}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}behaviours/\PYGZlt{}int:pk\PYGZgt{}/\PYGZsq{}}\PYG{p}{,} \PYG{n}{views}\PYG{o}{.}\PYG{n}{behaviour\PYGZus{}detail}\PYG{p}{),}
+    \PYG{n}{path}\PYG{p}{(}
+        \PYG{l+s+s1}{\PYGZsq{}behaviours/sequence/\PYGZlt{}int:length\PYGZgt{}/\PYGZsq{}}\PYG{p}{,}
+        \PYG{n}{views}\PYG{o}{.}\PYG{n}{sequence\PYGZus{}detail}
+        \PYG{p}{),}
+    \PYG{n}{path}\PYG{p}{(}
+        \PYG{l+s+s1}{\PYGZsq{}behaviours/sequence/\PYGZlt{}int:length\PYGZgt{}/\PYGZlt{}int:seed\PYGZgt{}/\PYGZsq{}}\PYG{p}{,}
+        \PYG{n}{views}\PYG{o}{.}\PYG{n}{sequence\PYGZus{}detail}
+        \PYG{p}{),}
+\PYG{p}{]}
+
+\PYG{n}{urlpatterns} \PYG{o}{=} \PYG{n}{format\PYGZus{}suffix\PYGZus{}patterns}\PYG{p}{(}\PYG{n}{urlpatterns}\PYG{p}{)}
+\end{Verbatim}
