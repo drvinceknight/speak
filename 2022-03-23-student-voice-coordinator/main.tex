@@ -1,0 +1,90 @@
+\documentclass{beamer}
+
+\usecolortheme[light]{solarized}
+
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{hyperref}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{moresize}
+\usepackage{standalone}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage[normalem]{ulem}
+\usepackage{xpatch}
+
+\xpatchcmd{\sout}
+  {\bgroup}
+    {\bgroup\def\ULthickness{2pt}}
+      {}{}
+
+\usetikzlibrary{calc, patterns}
+
+\definecolor{twitter}{RGB}{64, 153, 255}
+\definecolor{github}{RGB}{211, 211, 211}
+
+\newcommand{\assetsfolder}{./assets}
+\newcommand{\researchfolder}{$HOME/rsc/axelrod-moran}
+\newcommand{\mlresearchfolder}{$HOME/rsc/ml-paper}
+\newcommand{\sseresearchfolder}{$HOME/rsc/testing_for_ZD}
+
+\begin{document}
+
+    \begin{frame}
+        \begin{center}
+            \Huge Student Voice
+        \end{center}
+    \end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{assets/family.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{assets/flyingdog.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{assets/high-school.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{assets/graduation.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{assets/phd.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{assets/postdoc.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{assets/pycon.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \Huge You.
+    \end{center}
+\end{frame}
+
+\end{document}
